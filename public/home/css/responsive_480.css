@@ -1,0 +1,32 @@
+.card-view-page .card-body div > div{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.card-view-page .card-body div > a{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.nav-ad ul li svg{
+    display: none;
+}
+/*.nav-ad ul li::after{*/
+/*    content: '/';*/
+/*    margin-left: 3px;*/
+/*}*/
+.nav-ad ul li:last-child::after{
+    content: unset;
+}
+.card-view-page .card-footer button{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.card-post-comment .card-header div{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.card-post-comment .card-body{
+    flex-direction: column;
+}
+#postBottom{
+    display: none;
+}

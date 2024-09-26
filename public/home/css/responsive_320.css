@@ -1,0 +1,15 @@
+.post-card .btn{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.ad-expiration .btn{
+    width: 100%;
+    margin-bottom: 5px;
+}
+.ad-price-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+}
+

@@ -1,0 +1,143 @@
+.card-view-page .card-body div > div{
+    width: 49%;
+    margin-bottom: 20px;
+}
+.card-view-page .card-body div > a{
+    width: 24%;
+    margin-bottom: 20px;
+}
+.profile-info{
+    flex-direction: column;
+}
+.profile-info > div{
+    margin-top: 20px;
+}
+.profile-info > div:first-child{
+    margin-top: unset;
+}
+.profile-contact{
+    flex-direction: column;
+    margin-top: 20px;
+    padding-right: unset;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+    align-items: start;
+}
+
+.btns-request button, .btns-request a{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.li-profile-contact{
+    width: 100%;
+}
+.li-profile-contact button, .li-profile-contact a{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.share{
+    width: 100%;
+    -ms-flex-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+.profile-menu{
+    display: none;
+}
+.profile-menu-responsive{
+    display: block;
+}
+.li-social-media{
+    flex-direction: column;
+}
+.li-social-media p{
+    margin-bottom: 20px;
+}
+.li-social-media > div{
+    margin-right: unset;
+    width: 100%;
+}
+.post-card-responsive{
+    padding: 1rem;
+}
+.nav-ad{
+    margin-right: unset;
+    flex-wrap: wrap;
+}
+.listing-title{
+    margin-top: 20px;
+}
+.listing-ad-info{
+    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+.listing-ad-info{
+    align-items: start;
+}
+.ad-viewing-info{
+    flex-direction: column;
+    align-items: start;
+}
+.ad-viewing-info div{
+    margin-right: unset;
+}
+.post-card .btn{
+    width: 49%;
+    margin-bottom: 10px;
+}
+.logo{
+    display: none;
+}
+.c-header__left{
+    margin-right: unset;
+}
+.register-ad{
+    display: none;
+}
+.register-ad-responsive{
+    display: block;
+}
+.container_nav{
+    flex-direction: column-reverse;
+    justify-content: unset;
+    margin-left: unset;
+}
+.container_nav .c-button__link{
+    margin: 15px;
+}
+.cardAd{
+    margin-left: unset;
+}
+
+.single-page-container{
+    width: 100%;
+    padding: 0 20px;
+}
+.postHeader{
+    display: flex;
+    flex-direction: column;
+}
+.singlePagePostContent{
+    flex-direction: column;
+}
+.single-page-right{
+    margin-left: unset;
+}
+.post-sidebar{
+    width: 100%;
+    min-width: 100% !important;
+}
+.card-post-comment .card-header{
+    display: flex !important;
+    flex-wrap: wrap;
+}
+.card-post-comment .card-header div{
+    width: 49%;
+    margin-bottom: 10px;
+}
