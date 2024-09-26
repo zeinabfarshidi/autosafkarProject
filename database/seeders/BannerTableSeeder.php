@@ -19,7 +19,8 @@ class BannerTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Banner::count())
+            $this->data();
         Permission::store('banner', 'بنرهای تبلیغاتی');
     }
 

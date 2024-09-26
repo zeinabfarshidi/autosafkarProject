@@ -19,7 +19,8 @@ class SocialMediaTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!SocialMedia::count())
+            $this->data();
     }
 
     private function data()

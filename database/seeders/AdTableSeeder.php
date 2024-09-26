@@ -21,24 +21,24 @@ class AdTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Ad::count())
+            $this->data();
         Permission::store('ad', 'آگهی ها');
     }
 
     private function data()
     {
         $faker = Factory::create();
-        $adCategoryIds = AdCategory::all()->pluck('id')->toArray();
-        $stateIds = State::all()->pluck('id')->toArray();
-        $cityIds = City::all()->pluck('id')->toArray();
-        $areaIds = Area::all()->pluck('id')->toArray();
         foreach (User::all() as $user) {
+            $state = State::all()->random();
+            $city = $state->cities->random();
+            $area = $city->areas->random();
             Ad::create([
                 'user_id' => $user->id,
-                'ad_category_id' => array_rand($adCategoryIds),
-                'state_id' => array_rand($stateIds),
-                'city_id' => array_rand($cityIds),
-                'area_id' => array_rand($areaIds),
+                'ad_category_id' => AdCategory::all()->random()->id,
+                'state_id' => $state->id,
+                'city_id' => $city->id,
+                'area_id' => $area->id,
                 'title' => $faker->title,
                 'mobile' => '0910200122' . $user->id,
                 'minPrice'=>$faker->randomFloat(2,0,1000),

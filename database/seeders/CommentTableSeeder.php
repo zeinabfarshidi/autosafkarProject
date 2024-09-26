@@ -44,7 +44,7 @@ class CommentTableSeeder extends Seeder
         foreach ($users as $user) {
             Comment::create([
                 'user_id' => $user->id,
-                'commentable_type' => $commentable_type,
+                'commentable_type' => 'App\\Models\\' . $commentable_type,
                 'commentable_id' => $commentable_id,
                 'text' => $faker->text,
                 'status' => 'تایید شده',

@@ -17,7 +17,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!User::count())
+            $this->data();
         Permission::store('user', 'کاربران');
     }
 
@@ -31,10 +32,10 @@ class UserTableSeeder extends Seeder
                 $role_id = Role::all()->random()->id;
             User::create([
                 'name' => $faker->name,
-                'email' => $faker->unique()->safeEmail,
+                'email' => 'user' . $i . '@gmail.com',
                 'mobile' => '0910200122' . $i,
                 'role_id' => $role_id,
-                'password' => bcrypt($faker->password)
+                'password' => bcrypt('12345678')
             ]);
         }
     }

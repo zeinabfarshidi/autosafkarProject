@@ -17,7 +17,8 @@ class ProfileTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Profile::count())
+            $this->data();
     }
 
     private function data()

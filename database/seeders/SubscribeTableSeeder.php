@@ -18,7 +18,8 @@ class SubscribeTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Subscribe::count())
+            $this->data();
         Permission::store('subscribe', 'اشتراک ها');
     }
 

@@ -18,7 +18,8 @@ class ConfirmationTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Confirmation::count())
+            $this->data();
         Permission::store('confirmation', 'تاییدیه ها');
     }
 

@@ -18,18 +18,17 @@ class AreaTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Area::count())
+            $this->data();
     }
 
     private function data()
     {
         $faker = Factory::create();
-        $ids = User::all()->pluck('id')->toArray();
-        $cityIds = City::all()->pluck('id')->toArray();
-        foreach ($ids as $id) {
+        foreach (City::all() as $city) {
             Area::create([
-                'user_id' => $id,
-                'city_id' => array_rand($cityIds),
+                'user_id' => User::first()->id,
+                'city_id' => $city->id,
                 'name' => $faker->name,
             ]);
         }

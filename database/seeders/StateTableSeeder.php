@@ -18,7 +18,8 @@ class StateTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!State::count())
+            $this->data();
         Permission::store('state', 'شهر و منطقه');
     }
 

@@ -15,8 +15,10 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach ($this->data() as $item){
-            $role = Role::create($item);
+        if (!Role::count()){
+            foreach ($this->data() as $item){
+                $role = Role::create($item);
+            }
         }
         Permission::store('role', 'سطوح کاربری');
     }

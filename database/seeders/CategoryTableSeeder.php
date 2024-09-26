@@ -18,7 +18,8 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Category::count())
+            $this->data();
         Permission::store('category', 'دسته بندی ها');
     }
 

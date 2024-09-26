@@ -18,7 +18,8 @@ class ExampleWorkTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!ExampleWork::count())
+            $this->data();
         Permission::store('exampleWork', 'نمونه کارها');
     }
 

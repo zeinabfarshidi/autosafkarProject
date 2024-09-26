@@ -18,7 +18,8 @@ class OrderTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Order::count())
+            $this->data();
     }
 
     private function data()

@@ -19,7 +19,8 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Post::count())
+            $this->data();
         Permission::store('post', 'مقالات');
     }
 

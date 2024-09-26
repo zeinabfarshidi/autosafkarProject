@@ -20,13 +20,13 @@ class TenderPriceTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!TenderPrice::count())
+            $this->data();
         Permission::store('tender_prices', 'قیمت گذاری مناقصه');
     }
 
     private function data()
     {
-        $faker = Factory::create();
         TenderPrice::create([
             'user_id'=>User::first()->id,
             'price'=>'10000',

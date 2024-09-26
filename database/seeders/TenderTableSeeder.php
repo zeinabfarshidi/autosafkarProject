@@ -21,13 +21,13 @@ class TenderTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!Tender::count())
+            $this->data();
         Permission::store('tender', 'مناقصه');
     }
 
     private function data()
     {
-        $faker = Factory::create();
         $orders = Order::all()->random(5);
         foreach ($orders as $order) {
             Tender::create([

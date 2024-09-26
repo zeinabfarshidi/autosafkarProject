@@ -17,7 +17,8 @@ class TechnicalDegreeTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!TechnicalDegree::count())
+            $this->data();
     }
 
     private function data()

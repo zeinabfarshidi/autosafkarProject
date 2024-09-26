@@ -18,7 +18,8 @@ class AdCategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!AdCategory::count())
+            $this->data();
         Permission::store('adCategory', 'دسته بندی آگهی ها');
     }
 

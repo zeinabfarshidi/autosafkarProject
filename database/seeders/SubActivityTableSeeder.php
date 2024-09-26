@@ -19,7 +19,8 @@ class SubActivityTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!SubActivity::count())
+            $this->data();
     }
 
     private function data()

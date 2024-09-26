@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdCategory;
 use App\Models\City;
 use App\Models\State;
 use App\Models\User;
@@ -17,18 +18,17 @@ class CityTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();;
+        if (!City::count())
+            $this->data();;
     }
 
     private function data()
     {
         $faker = Factory::create();
-        $ids = User::all()->pluck('id')->toArray();
-        $stateIds = State::all()->pluck('id')->toArray();
-        foreach ($ids as $id) {
+        foreach (State::all() as $state) {
             City::create([
-                'user_id' => $id,
-                'state_id' => array_rand($stateIds),
+                'user_id' => User::first()->id,
+                'state_id' => $state->id,
                 'name' => $faker->name,
             ]);
         }

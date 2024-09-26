@@ -18,14 +18,14 @@ class AdImageTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->data();
+        if (!AdImage::count())
+            $this->data();
     }
 
     private function data()
     {
         $faker = Factory::create();
-        $ads = Ad::all();
-        foreach ($ads as $ad) {
+        foreach (Ad::all() as $ad) {
             AdImage::create([
                 'user_id' => $ad->user->id,
                 'ad_id' => $ad->id,
