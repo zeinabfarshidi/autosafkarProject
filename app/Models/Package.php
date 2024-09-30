@@ -13,7 +13,7 @@ class Package extends Model
     protected $fillable = [
         'name',
         'content',
-        'thumbnail_id',
+        'thumbnail_id', // belongto ---->upload
         'price',
         'active_days',
         'perquisites',

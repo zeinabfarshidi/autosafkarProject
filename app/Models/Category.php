@@ -14,4 +14,10 @@ class Category extends Model
 
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
+
+    //ریلیشن با خودش دارد
+
+    //با آپلود ریلیشن دارد belongTo
+    //hasmeny دارد با ExtraDataField
+    //hasmanhy با Ad
 }

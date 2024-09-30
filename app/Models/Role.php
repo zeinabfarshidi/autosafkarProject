@@ -15,4 +15,9 @@ class Role extends Model
     CONST CREATED_AT = null;
 
     CONST UPDATED_AT = null;
+
+    public function Permissions()
+    {
+        return $this->morphToMany(Permission::class, 'permanent', Relationship::class);
+    }
 }

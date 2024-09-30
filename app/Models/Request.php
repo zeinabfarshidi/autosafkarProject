@@ -20,4 +20,6 @@ class Request extends Model
         'content',
         'status'
     ];
+
+    //هم منقصه و هم مزایده در Request جا میگیرند
 }

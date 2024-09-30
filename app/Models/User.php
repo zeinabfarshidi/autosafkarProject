@@ -20,8 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id',
-        'thumbnail_id',
+        'role_id', //roles -----> belongTo
+        'thumbnail_id', //upload -----> belongTo
         'phone',
         'ref_code',
         'wallet',

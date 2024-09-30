@@ -11,4 +11,6 @@ class Ticket extends Model
 
     protected $table = 'tickets';
     protected $fillable = ['ticket_type_id', 'subject', 'base_question', 'status'];
+
+// موف منی با کامنت ها
 }

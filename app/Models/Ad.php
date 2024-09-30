@@ -25,4 +25,6 @@ class Ad extends Model
         'price',
         'max_price',
     ];
+
+    //ابطه پلی مورفیک با یک به چند با ExtraData
 }

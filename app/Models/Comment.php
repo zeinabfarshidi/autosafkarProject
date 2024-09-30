@@ -11,4 +11,6 @@ class Comment extends Model
 
     protected $table = 'comments';
     protected $fillable = ['user_id', 'content', 'rate', 'comment_status'];
+
+    //همه مدل ها یا این پلی مورفیک دارند. آگهی و تیکت ها ستونهاش رو اضافه کنیم.
 }

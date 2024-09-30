@@ -14,4 +14,6 @@ class GeoLocation extends Model
 
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
+
+    //ریلیشن با خودش دارد
 }

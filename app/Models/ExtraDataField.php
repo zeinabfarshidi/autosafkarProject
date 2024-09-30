@@ -14,7 +14,7 @@ class ExtraDataField extends Model
         'name',
         'type',
         'settings',
-        'show_categories_id'
+        'show_categories_id' // با category ریلیشن دارد belongTo
     ];
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
