@@ -12,8 +12,7 @@ class PaymentGateway extends Model
     protected $table = 'payment_gateways';
     protected $fillable = ['name', 'thumbnail_id', 'desc', 'settings'];
 
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function upload()
     {

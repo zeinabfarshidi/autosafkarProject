@@ -12,8 +12,7 @@ class UpgradePackage extends Model
     protected $table = 'upgrade_packages';
     protected $fillable = ['name', 'content', 'interval', 'price', 'thumbnail_id'];
 
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function upload()
     {

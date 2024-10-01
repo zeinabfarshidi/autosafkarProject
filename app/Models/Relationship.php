@@ -12,7 +12,5 @@ class Relationship extends Model
     protected $table = 'relationships';
     protected $fillable = ['object_type', 'object_id', 'target_id'];
 
-    CONST CREATED_AT = null;
-
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 }

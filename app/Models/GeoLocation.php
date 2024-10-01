@@ -12,8 +12,7 @@ class GeoLocation extends Model
     protected $table = 'geo_locations';
     protected $fillable = ['name', 'lat', 'long', 'parent_id', 'level_name'];
 
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function parent()
     {

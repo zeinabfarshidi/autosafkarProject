@@ -12,9 +12,7 @@ class Metadata extends Model
     protected $table = 'metadata';
     protected $fillable = ['metaable_type', 'metaable_id', 'meta_key', 'meta_value', 'parent_id'];
 
-    CONST CREATED_AT = null;
-
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function metaable()
     {

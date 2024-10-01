@@ -12,8 +12,7 @@ class Category extends Model
     protected $table = 'categories';
     protected $fillable = ['name', 'desc', 'thumbnail_id', 'parent_id'];
 
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function ads()
     {

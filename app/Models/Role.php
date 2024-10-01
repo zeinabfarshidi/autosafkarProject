@@ -12,9 +12,7 @@ class Role extends Model
     protected $table = 'roles';
     protected $fillable = ['name'];
 
-    CONST CREATED_AT = null;
-
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function permissions()
     {

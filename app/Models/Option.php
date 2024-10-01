@@ -12,6 +12,5 @@ class Option extends Model
     protected $table = 'options';
     protected $fillable = ['option_key', 'option_value'];
 
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 }

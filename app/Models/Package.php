@@ -19,8 +19,7 @@ class Package extends Model
         'perquisites',
         'picutre_count'
     ];
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function upload()
     {

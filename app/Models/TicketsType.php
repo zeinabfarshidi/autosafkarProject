@@ -12,8 +12,7 @@ class TicketsType extends Model
     protected $table = 'tickets_types';
     protected $fillable = ['name', 'content'];
 
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function tickets()
     {

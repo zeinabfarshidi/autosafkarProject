@@ -12,8 +12,7 @@ class Permission extends Model
     protected $table = 'permissions';
     protected $fillable = ['name'];
 
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function categories()
     {

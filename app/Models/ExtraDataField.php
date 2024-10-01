@@ -16,8 +16,7 @@ class ExtraDataField extends Model
         'settings',
         'show_categories_id'
     ];
-    CONST CREATED_AT = null;
-    CONST UPDATED_AT = null;
+    public $timestamps = false;
 
     public function category()
     {
