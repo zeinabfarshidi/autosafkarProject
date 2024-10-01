@@ -14,4 +14,9 @@ class TicketsType extends Model
 
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class, 'ticket_type_id', 'id');
+    }
 }

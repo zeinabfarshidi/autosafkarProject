@@ -26,5 +26,32 @@ class Ad extends Model
         'max_price',
     ];
 
-    //ابطه پلی مورفیک با یک به چند با ExtraData
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+    public function extra_datas()
+    {
+        return $this->morphMany(ExtraData::class, 'extra_dataable');
+    }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
+    }
+
+    public function requests()
+    {
+        return $this->hasMany(Request::class, 'ad', 'id');
+    }
 }

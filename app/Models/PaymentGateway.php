@@ -14,4 +14,9 @@ class PaymentGateway extends Model
 
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
+
+    public function upload()
+    {
+        return $this->belongsTo(Upload::class, 'thumbnail_id', 'id');
+    }
 }

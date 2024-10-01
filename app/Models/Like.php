@@ -10,8 +10,15 @@ class Like extends Model
     use HasFactory;
 
     protected $table = 'likes';
-    protected $fillable = ['likeable_type', 'likeable_id', 'user_id', 'like_type'];
+    protected $fillable = ['user_id', 'likeable_type', 'likeable_id', 'like_type'];
 
-//    پلی مورفیک یا کامنت ها و اگهی و تیگت ها
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 
+    public function likeable()
+    {
+        return $this->morphTo();
+    }
 }

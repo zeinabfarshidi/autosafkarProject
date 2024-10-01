@@ -20,7 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id', //roles -----> belongTo
+        'role_id',
         'thumbnail_id', //upload -----> belongTo
         'phone',
         'ref_code',
@@ -49,5 +49,35 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function ads()
+    {
+        return $this->hasMany(Ad::class, 'user_id', 'id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'user_id', 'id');
+    }
+
+    public function requests()
+    {
+        return $this->hasMany(Request::class, 'user_id', 'id');
+    }
+
+    public function roles()
+    {
+        return $this->belongsTo(Role::class, 'role_id', 'id');
+    }
+
+    public function upload()
+    {
+        return $this->belongsTo(Upload::class, 'thumbnail_id', 'id');
     }
 }

@@ -21,5 +21,13 @@ class Request extends Model
         'status'
     ];
 
-    //هم منقصه و هم مزایده در Request جا میگیرند
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function ad()
+    {
+        return $this->belongsTo(Ad::class, 'ad', 'id');
+    }
 }

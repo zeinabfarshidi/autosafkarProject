@@ -15,5 +15,13 @@ class GeoLocation extends Model
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
 
-    //ریلیشن با خودش دارد
+    public function parent()
+    {
+        return $this->belongsTo(GeoLocation::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(GeoLocation::class, 'parent_id');
+    }
 }

@@ -13,7 +13,7 @@ class Package extends Model
     protected $fillable = [
         'name',
         'content',
-        'thumbnail_id', // belongto ---->upload
+        'thumbnail_id',
         'price',
         'active_days',
         'perquisites',
@@ -21,4 +21,9 @@ class Package extends Model
     ];
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
+
+    public function upload()
+    {
+        return $this->belongsTo(Upload::class, 'thumbnail_id', 'id');
+    }
 }

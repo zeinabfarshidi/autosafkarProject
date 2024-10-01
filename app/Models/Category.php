@@ -15,9 +15,28 @@ class Category extends Model
     CONST CREATED_AT = null;
     CONST UPDATED_AT = null;
 
-    //ریلیشن با خودش دارد
+    public function ads()
+    {
+        return $this->hasMany(Ad::class, 'category_id', 'id');
+    }
 
-    //با آپلود ریلیشن دارد belongTo
-    //hasmeny دارد با ExtraDataField
-    //hasmanhy با Ad
+    public function extraDataFields()
+    {
+        return $this->hasMany(ExtraDataField::class, 'show_categories_id', 'id');
+    }
+
+    public function upload()
+    {
+        return $this->belongsTo(Upload::class, 'thumbnail_id', 'id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'parent_id');
+    }
 }

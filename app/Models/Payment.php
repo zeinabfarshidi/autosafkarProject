@@ -13,8 +13,8 @@ class Payment extends Model
     protected $fillable = [
         'payment_gateway_id',
         'price',
-        'payementable_id', //پلی مورفیک یک به چند با payement
-        'payementable_type',
+        'payementable_type', //پلی مورفیک یک به چند با payement
+        'payementable_id',
         'payment_type',
         'payment_note',
         'payment_status',
