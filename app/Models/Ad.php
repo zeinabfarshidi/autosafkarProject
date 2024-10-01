@@ -54,4 +54,9 @@ class Ad extends Model
     {
         return $this->hasMany(Request::class, 'ad', 'id');
     }
+
+    public function payments()
+    {
+        return $this->morphMany(Payment::class, 'commentable');
+    }
 }

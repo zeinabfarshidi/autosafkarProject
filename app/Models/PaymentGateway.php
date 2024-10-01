@@ -18,4 +18,9 @@ class PaymentGateway extends Model
     {
         return $this->belongsTo(Upload::class, 'thumbnail_id', 'id');
     }
+
+    public function payments()
+    {
+        return $this->morphMany(Payment::class, 'commentable');
+    }
 }

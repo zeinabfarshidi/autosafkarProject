@@ -13,7 +13,7 @@ class Payment extends Model
     protected $fillable = [
         'payment_gateway_id',
         'price',
-        'payementable_type', //پلی مورفیک یک به چند با payement
+        'payementable_type',
         'payementable_id',
         'payment_type',
         'payment_note',
@@ -22,4 +22,9 @@ class Payment extends Model
         'discount_name',
         'discount_price',
     ];
+
+    public function payementable()
+    {
+        return $this->morphTo();
+    }
 }

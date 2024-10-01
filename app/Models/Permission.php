@@ -14,11 +14,6 @@ class Permission extends Model
 
     public $timestamps = false;
 
-    public function categories()
-    {
-        return $this->morphToMany('App\Category', 'categorizable');
-    }
-
     public function roles()
     {
         return $this->morphedByMany(Role::class, 'permissionable', Relationship::class);
