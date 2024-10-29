@@ -12,9 +12,9 @@
 //>>description: Enables resize functionality for any element.
 //>>docs: https://api.jqueryui.com/resizable/
 //>>demos: https://jqueryui.com/resizable/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/resizable.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/resizable.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

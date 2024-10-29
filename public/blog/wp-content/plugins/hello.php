@@ -71,7 +71,7 @@ add_action( 'admin_notices', 'hello_dolly' );
 // We need some CSS to position the paragraph.
 function dolly_css() {
 	echo "
-	<style type='text/css'>
+	<style type='text/css1'>
 	#dolly {
 		float: right;
 		padding: 5px 10px;

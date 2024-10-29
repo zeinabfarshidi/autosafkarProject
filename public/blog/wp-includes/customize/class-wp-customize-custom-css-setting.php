@@ -152,7 +152,7 @@ final class WP_Customize_Custom_CSS_Setting extends WP_Customize_Setting {
 	 *
 	 * @since 4.7.0
 	 * @since 4.9.0 Checking for balanced characters has been moved client-side via linting in code editor.
-	 * @since 5.9.0 Renamed `$css` to `$value` for PHP 8 named parameter support.
+	 * @since 5.9.0 Renamed `$css1` to `$value` for PHP 8 named parameter support.
 	 *
 	 * @param string $value CSS to validate.
 	 * @return true|WP_Error True if the input was validated, otherwise WP_Error.
@@ -177,7 +177,7 @@ final class WP_Customize_Custom_CSS_Setting extends WP_Customize_Setting {
 	 * Store the CSS setting value in the custom_css custom post type for the stylesheet.
 	 *
 	 * @since 4.7.0
-	 * @since 5.9.0 Renamed `$css` to `$value` for PHP 8 named parameter support.
+	 * @since 5.9.0 Renamed `$css1` to `$value` for PHP 8 named parameter support.
 	 *
 	 * @param string $value CSS to update.
 	 * @return int|false The post ID or false if the value could not be saved.

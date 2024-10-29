@@ -595,7 +595,7 @@ module.exports.remove = removeAccents;
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -609,14 +609,14 @@ module.exports.remove = removeAccents;
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -629,7 +629,7 @@ module.exports.remove = removeAccents;
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -641,12 +641,12 @@ module.exports.remove = removeAccents;
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -657,7 +657,7 @@ module.exports.remove = removeAccents;
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -14375,7 +14375,7 @@ k([names]);
 const DEFAULT_BACKGROUND_COLOR = '#FFF';
 
 /**
- * Default dim color specified in style.css.
+ * Default dim color specified in style.css1.
  */
 const DEFAULT_OVERLAY_COLOR = '#000';
 
@@ -52336,7 +52336,7 @@ function useDeprecatedOpacity(opacity, currentColor, setAttributes) {
     }
   }, [currentColor, previousColor, opacity]);
 
-  // For deprecated blocks, that have a default 0.4 css opacity set, we
+  // For deprecated blocks, that have a default 0.4 css1 opacity set, we
   // need to remove this if the current color is changed, or a color is added.
   // In these instances the opacity attribute is set back to the default of
   // alpha-channel which allows a new custom opacity to be set via the color picker.

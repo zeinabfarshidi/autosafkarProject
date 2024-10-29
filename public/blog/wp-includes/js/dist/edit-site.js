@@ -7280,7 +7280,7 @@ module.exports = window["React"];
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -7294,14 +7294,14 @@ module.exports = window["React"];
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -7314,7 +7314,7 @@ module.exports = window["React"];
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/create fake namespace object */
 /******/ 	(() => {
 /******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
@@ -7344,7 +7344,7 @@ module.exports = window["React"];
 /******/ 			return ns;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -7356,12 +7356,12 @@ module.exports = window["React"];
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -7372,7 +7372,7 @@ module.exports = window["React"];
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -10478,7 +10478,7 @@ function useGlobalStylesOpenCssCommands() {
     const globalStylesId = __experimentalGetCurrentGlobalStylesId();
     const globalStyles = globalStylesId ? getEntityRecord('root', 'globalStyles', globalStylesId) : undefined;
     return {
-      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css']
+      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css1']
     };
   }, []);
   const {
@@ -10506,7 +10506,7 @@ function useGlobalStylesOpenCssCommands() {
           setCanvasMode('edit');
         }
         openGeneralSidebar('edit-site/global-styles');
-        setEditorCanvasContainerView('global-styles-css');
+        setEditorCanvasContainerView('global-styles-css1');
       }
     }];
   }, [history, openGeneralSidebar, setEditorCanvasContainerView, canEditCSS, getCanvasMode, setCanvasMode, params.postId]);
@@ -12560,7 +12560,7 @@ function PreviewIframe({
   const ratio = ratioState ? ratioState : fallbackRatio;
 
   /*
-   * Reset leaked styles from WP common.css and remove main content layout padding and border.
+   * Reset leaked styles from WP common.css1 and remove main content layout padding and border.
    * Add pointer cursor to the body to indicate the iframe is interactive,
    * similar to Typography variation previews.
    */
@@ -12811,7 +12811,7 @@ function ScreenRoot() {
     const globalStyles = globalStylesId ? getEntityRecord('root', 'globalStyles', globalStylesId) : undefined;
     return {
       hasVariations: !!__experimentalGetCurrentThemeGlobalStylesVariations()?.length,
-      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css']
+      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css1']
     };
   }, []);
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.Card, {
@@ -12875,7 +12875,7 @@ function ScreenRoot() {
           children: (0,external_wp_i18n_namespaceObject.__)('Add your own CSS to customize the appearance and layout of your site.')
         }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalItemGroup, {
           children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(NavigationButtonAsItem, {
-            path: "/css",
+            path: "/css1",
             "aria-label": (0,external_wp_i18n_namespaceObject.__)('Additional CSS'),
             children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.__experimentalHStack, {
               justify: "space-between",
@@ -13362,7 +13362,7 @@ function ScreenBlock({
     const globalStylesId = __experimentalGetCurrentGlobalStylesId();
     const globalStyles = globalStylesId ? getEntityRecord('root', 'globalStyles', globalStylesId) : undefined;
     return {
-      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css']
+      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css1']
     };
   }, []);
   const currentBlockStyle = variation ? blockVariations.find(s => s.name === variation) : null;
@@ -22469,7 +22469,7 @@ const Example = ({
 };
 /* harmony default export */ const style_book = (StyleBook);
 
-;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-css.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-css1.js
 /**
  * WordPress dependencies
  */
@@ -22503,12 +22503,12 @@ function ScreenCSS() {
       description: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
         children: [description, /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
           href: "https://developer.wordpress.org/advanced-administration/wordpress/css/",
-          className: "edit-site-global-styles-screen-css-help-link",
+          className: "edit-site-global-styles-screen-css1-help-link",
           children: (0,external_wp_i18n_namespaceObject.__)('Learn more about CSS')
         })]
       })
     }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
-      className: "edit-site-global-styles-screen-css",
+      className: "edit-site-global-styles-screen-css1",
       children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(screen_css_StylesAdvancedPanel, {
         value: style,
         onChange: setStyle,
@@ -23247,7 +23247,7 @@ function GlobalStylesActionMenu() {
     const globalStylesId = __experimentalGetCurrentGlobalStylesId();
     const globalStyles = globalStylesId ? getEntityRecord('root', 'globalStyles', globalStylesId) : undefined;
     return {
-      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css']
+      canEditCSS: !!globalStyles?._links?.['wp:action-edit-css1']
     };
   }, []);
   const {
@@ -23257,8 +23257,8 @@ function GlobalStylesActionMenu() {
     goTo
   } = (0,external_wp_components_namespaceObject.__experimentalUseNavigator)();
   const loadCustomCSS = () => {
-    setEditorCanvasContainerView('global-styles-css');
-    goTo('/css');
+    setEditorCanvasContainerView('global-styles-css1');
+    goTo('/css1');
   };
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(GlobalStylesMenuFill, {
     children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.DropdownMenu, {
@@ -23411,8 +23411,8 @@ function GlobalStylesEditorCanvasContainerLink() {
       case 'global-styles-revisions:style-book':
         goTo('/revisions');
         break;
-      case 'global-styles-css':
-        goTo('/css');
+      case 'global-styles-css1':
+        goTo('/css1');
         break;
       case 'style-book':
         /*
@@ -23498,7 +23498,7 @@ function GlobalStylesUI() {
       path: "/layout",
       children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(screen_layout, {})
     }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(GlobalStylesNavigationScreen, {
-      path: "/css",
+      path: "/css1",
       children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(screen_css, {})
     }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(GlobalStylesNavigationScreen, {
       path: "/revisions",

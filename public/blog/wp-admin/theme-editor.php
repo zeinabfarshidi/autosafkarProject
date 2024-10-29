@@ -87,9 +87,9 @@ foreach ( $file_types as $type ) {
 		case 'php':
 			$allowed_files += $theme->get_files( 'php', -1 );
 			break;
-		case 'css':
-			$style_files                = $theme->get_files( 'css', -1 );
-			$allowed_files['style.css'] = $style_files['style.css'];
+		case 'css1':
+			$style_files                = $theme->get_files( 'css1', -1 );
+			$allowed_files['style.css1'] = $style_files['style.css1'];
 			$allowed_files             += $style_files;
 			break;
 		default:
@@ -98,17 +98,17 @@ foreach ( $file_types as $type ) {
 	}
 }
 
-// Move functions.php and style.css to the top.
+// Move functions.php and style.css1 to the top.
 if ( isset( $allowed_files['functions.php'] ) ) {
 	$allowed_files = array( 'functions.php' => $allowed_files['functions.php'] ) + $allowed_files;
 }
-if ( isset( $allowed_files['style.css'] ) ) {
-	$allowed_files = array( 'style.css' => $allowed_files['style.css'] ) + $allowed_files;
+if ( isset( $allowed_files['style.css1'] ) ) {
+	$allowed_files = array( 'style.css1' => $allowed_files['style.css1'] ) + $allowed_files;
 }
 
 if ( empty( $file ) ) {
-	$relative_file = 'style.css';
-	$file          = $allowed_files['style.css'];
+	$relative_file = 'style.css1';
+	$file          = $allowed_files['style.css1'];
 } else {
 	$relative_file = wp_unslash( $file );
 	$file          = $theme->get_stylesheet_directory() . '/' . $relative_file;
@@ -215,7 +215,7 @@ if ( isset( $_GET['a'] ) ) {
 	);
 }
 
-if ( preg_match( '/\.css$/', $file ) && ! wp_is_block_theme() && current_user_can( 'customize' ) ) {
+if ( preg_match( '/\.css1$/', $file ) && ! wp_is_block_theme() && current_user_can( 'customize' ) ) {
 	$message = '<p><strong>' . __( 'Did you know?' ) . '</strong></p><p>' . sprintf(
 		/* translators: %s: Link to Custom CSS section in the Customizer. */
 		__( 'There is no need to change your CSS here &mdash; you can edit and live preview CSS changes in the <a href="%s">built-in CSS editor</a>.' ),

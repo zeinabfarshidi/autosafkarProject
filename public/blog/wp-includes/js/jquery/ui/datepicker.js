@@ -13,9 +13,9 @@
 //>>description: Displays a calendar from an input or inline for selecting dates.
 //>>docs: https://api.jqueryui.com/datepicker/
 //>>demos: https://jqueryui.com/datepicker/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/datepicker.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/datepicker.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

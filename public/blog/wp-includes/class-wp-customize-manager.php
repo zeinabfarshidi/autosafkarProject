@@ -334,7 +334,7 @@ final class WP_Customize_Manager {
 		require_once ABSPATH . WPINC . '/customize/class-wp-customize-sidebar-section.php';
 		require_once ABSPATH . WPINC . '/customize/class-wp-customize-nav-menu-section.php';
 
-		require_once ABSPATH . WPINC . '/customize/class-wp-customize-custom-css-setting.php';
+		require_once ABSPATH . WPINC . '/customize/class-wp-customize-custom-css1-setting.php';
 		require_once ABSPATH . WPINC . '/customize/class-wp-customize-filter-setting.php';
 		require_once ABSPATH . WPINC . '/customize/class-wp-customize-header-image-setting.php';
 		require_once ABSPATH . WPINC . '/customize/class-wp-customize-background-image-setting.php';
@@ -5700,7 +5700,7 @@ final class WP_Customize_Manager {
 		$section_description .= __( 'Add your own CSS code here to customize the appearance and layout of your site.' );
 		$section_description .= sprintf(
 			' <a href="%1$s" class="external-link" target="_blank">%2$s<span class="screen-reader-text"> %3$s</span></a>',
-			esc_url( __( 'https://developer.wordpress.org/advanced-administration/wordpress/css/' ) ),
+			esc_url( __( 'https://developer.wordpress.org/advanced-administration/wordpress/css1/' ) ),
 			__( 'Learn more about CSS' ),
 			/* translators: Hidden accessibility text. */
 			__( '(opens in a new tab)' )
@@ -5762,7 +5762,7 @@ final class WP_Customize_Manager {
 					'label'       => __( 'CSS code' ),
 					'section'     => 'custom_css',
 					'settings'    => array( 'default' => $custom_css_setting->id ),
-					'code_type'   => 'text/css',
+					'code_type'   => 'text/css1',
 					'input_attrs' => array(
 						'aria-describedby' => 'editor-keyboard-trap-help-1 editor-keyboard-trap-help-2 editor-keyboard-trap-help-3 editor-keyboard-trap-help-4',
 					),

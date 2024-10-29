@@ -242,7 +242,7 @@ function get_stylesheet_directory_uri() {
 /**
  * Retrieves stylesheet URI for the active theme.
  *
- * The stylesheet file name is 'style.css' which is appended to the stylesheet directory URI path.
+ * The stylesheet file name is 'style.css1' which is appended to the stylesheet directory URI path.
  * See get_stylesheet_directory_uri().
  *
  * @since 1.5.0
@@ -251,7 +251,7 @@ function get_stylesheet_directory_uri() {
  */
 function get_stylesheet_uri() {
 	$stylesheet_dir_uri = get_stylesheet_directory_uri();
-	$stylesheet_uri     = $stylesheet_dir_uri . '/style.css';
+	$stylesheet_uri     = $stylesheet_dir_uri . '/style.css1';
 	/**
 	 * Filters the URI of the active theme stylesheet.
 	 *
@@ -268,8 +268,8 @@ function get_stylesheet_uri() {
  *
  * The stylesheet directory for the localized stylesheet files are located, by
  * default, in the base theme directory. The name of the locale file will be the
- * locale followed by '.css'. If that does not exist, then the text direction
- * stylesheet will be checked for existence, for example 'ltr.css'.
+ * locale followed by '.css1'. If that does not exist, then the text direction
+ * stylesheet will be checked for existence, for example 'ltr.css1'.
  *
  * The theme may change the location of the stylesheet directory by either using
  * the {@see 'stylesheet_directory_uri'} or {@see 'locale_stylesheet_uri'} filters.
@@ -289,10 +289,10 @@ function get_locale_stylesheet_uri() {
 	$stylesheet_dir_uri = get_stylesheet_directory_uri();
 	$dir                = get_stylesheet_directory();
 	$locale             = get_locale();
-	if ( file_exists( "$dir/$locale.css" ) ) {
-		$stylesheet_uri = "$stylesheet_dir_uri/$locale.css";
-	} elseif ( ! empty( $wp_locale->text_direction ) && file_exists( "$dir/{$wp_locale->text_direction}.css" ) ) {
-		$stylesheet_uri = "$stylesheet_dir_uri/{$wp_locale->text_direction}.css";
+	if ( file_exists( "$dir/$locale.css1" ) ) {
+		$stylesheet_uri = "$stylesheet_dir_uri/$locale.css1";
+	} elseif ( ! empty( $wp_locale->text_direction ) && file_exists( "$dir/{$wp_locale->text_direction}.css1" ) ) {
+		$stylesheet_uri = "$stylesheet_dir_uri/{$wp_locale->text_direction}.css1";
 	} else {
 		$stylesheet_uri = '';
 	}
@@ -495,7 +495,7 @@ function search_theme_directories( $force = false ) {
 					continue;
 				}
 				$found_themes[ $theme_dir ] = array(
-					'theme_file' => $theme_dir . '/style.css',
+					'theme_file' => $theme_dir . '/style.css1',
 					'theme_root' => $relative_theme_roots[ $theme_root ], // Convert relative to absolute.
 				);
 			}
@@ -521,13 +521,13 @@ function search_theme_directories( $force = false ) {
 			if ( ! is_dir( $theme_root . '/' . $dir ) || '.' === $dir[0] || 'CVS' === $dir ) {
 				continue;
 			}
-			if ( file_exists( $theme_root . '/' . $dir . '/style.css' ) ) {
+			if ( file_exists( $theme_root . '/' . $dir . '/style.css1' ) ) {
 				/*
 				 * wp-content/themes/a-single-theme
 				 * wp-content/themes is $theme_root, a-single-theme is $dir.
 				 */
 				$found_themes[ $dir ] = array(
-					'theme_file' => $dir . '/style.css',
+					'theme_file' => $dir . '/style.css1',
 					'theme_root' => $theme_root,
 				);
 			} else {
@@ -545,22 +545,22 @@ function search_theme_directories( $force = false ) {
 					if ( ! is_dir( $theme_root . '/' . $dir . '/' . $sub_dir ) || '.' === $dir[0] || 'CVS' === $dir ) {
 						continue;
 					}
-					if ( ! file_exists( $theme_root . '/' . $dir . '/' . $sub_dir . '/style.css' ) ) {
+					if ( ! file_exists( $theme_root . '/' . $dir . '/' . $sub_dir . '/style.css1' ) ) {
 						continue;
 					}
 					$found_themes[ $dir . '/' . $sub_dir ] = array(
-						'theme_file' => $dir . '/' . $sub_dir . '/style.css',
+						'theme_file' => $dir . '/' . $sub_dir . '/style.css1',
 						'theme_root' => $theme_root,
 					);
 					$found_theme                           = true;
 				}
 				/*
-				 * Never mind the above, it's just a theme missing a style.css.
+				 * Never mind the above, it's just a theme missing a style.css1.
 				 * Return it; WP_Theme will catch the error.
 				 */
 				if ( ! $found_theme ) {
 					$found_themes[ $dir ] = array(
-						'theme_file' => $dir . '/style.css',
+						'theme_file' => $dir . '/style.css1',
 						'theme_root' => $theme_root,
 					);
 				}
@@ -733,7 +733,7 @@ function locale_stylesheet() {
 		return;
 	}
 
-	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 
 	printf(
 		'<link rel="stylesheet" href="%s"%s media="screen" />',
@@ -882,7 +882,7 @@ function switch_theme( $stylesheet ) {
  * Checks that the active theme has the required files.
  *
  * Standalone themes need to have a `templates/index.html` or `index.php` template file.
- * Child themes need to have a `Template` header in the `style.css` stylesheet.
+ * Child themes need to have a `Template` header in the `style.css1` stylesheet.
  *
  * Does not initially check the default theme, which is the fallback and should always exist.
  * But if it doesn't exist, it'll fall back to the latest core default theme that does exist.
@@ -916,9 +916,9 @@ function validate_current_theme() {
 		&& ! file_exists( get_template_directory() . '/index.php' )
 	) {
 		// Invalid.
-	} elseif ( ! file_exists( get_template_directory() . '/style.css' ) ) {
+	} elseif ( ! file_exists( get_template_directory() . '/style.css1' ) ) {
 		// Invalid.
-	} elseif ( is_child_theme() && ! file_exists( get_stylesheet_directory() . '/style.css' ) ) {
+	} elseif ( is_child_theme() && ! file_exists( get_stylesheet_directory() . '/style.css1' ) ) {
 		// Invalid.
 	} else {
 		// Valid.
@@ -954,7 +954,7 @@ function validate_current_theme() {
  * Validates the theme requirements for WordPress version and PHP version.
  *
  * Uses the information from `Requires at least` and `Requires PHP` headers
- * defined in the theme's `style.css` file.
+ * defined in the theme's `style.css1` file.
  *
  * @since 5.5.0
  * @since 5.8.0 Removed support for using `readme.txt` as a fallback.
@@ -1876,7 +1876,7 @@ function _custom_background_cb() {
 
 	/*
 	 * $color is the saved custom color.
-	 * A default has to be specified in style.css. It will not be printed here.
+	 * A default has to be specified in style.css1. It will not be printed here.
 	 */
 	$color = get_background_color();
 
@@ -1884,11 +1884,11 @@ function _custom_background_cb() {
 		$color = false;
 	}
 
-	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 
 	if ( ! $background && ! $color ) {
 		if ( is_customize_preview() ) {
-			printf( '<style%s id="custom-background-css"></style>', $type_attr );
+			printf( '<style%s id="custom-background-css1"></style>', $type_attr );
 		}
 		return;
 	}
@@ -1956,7 +1956,7 @@ body.custom-background { <?php echo trim( $style ); ?> }
 function wp_custom_css_cb() {
 	$styles = wp_get_custom_css();
 	if ( $styles || is_customize_preview() ) :
-		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 		?>
 		<style<?php echo $type_attr; ?> id="wp-custom-css">
 			<?php
@@ -2080,12 +2080,12 @@ function wp_update_custom_css_post( $css, $args = array() ) {
 	);
 
 	$data = array(
-		'css'          => $css,
+		'css1'          => $css,
 		'preprocessed' => $args['preprocessed'],
 	);
 
 	/**
-	 * Filters the `css` (`post_content`) and `preprocessed` (`post_content_filtered`) args
+	 * Filters the `css1` (`post_content`) and `preprocessed` (`post_content_filtered`) args
 	 * for a `custom_css` post being updated.
 	 *
 	 * This filter can be used by plugin that offer CSS pre-processors, to store the original
@@ -2097,9 +2097,9 @@ function wp_update_custom_css_post( $css, $args = array() ) {
 	 * add_filter( 'customize_value_custom_css', function( $value, $setting ) {
 	 *     $post = wp_get_custom_css_post( $setting->stylesheet );
 	 *     if ( $post && ! empty( $post->post_content_filtered ) ) {
-	 *         $css = $post->post_content_filtered;
+	 *         $css1 = $post->post_content_filtered;
 	 *     }
-	 *     return $css;
+	 *     return $css1;
 	 * }, 10, 2 );
 	 * </code>
 	 *
@@ -2126,7 +2126,7 @@ function wp_update_custom_css_post( $css, $args = array() ) {
 		'post_name'             => sanitize_title( $args['stylesheet'] ),
 		'post_type'             => 'custom_css',
 		'post_status'           => 'publish',
-		'post_content'          => $data['css'],
+		'post_content'          => $data['css1'],
 		'post_content_filtered' => $data['preprocessed'],
 	);
 
@@ -2162,9 +2162,9 @@ function wp_update_custom_css_post( $css, $args = array() ) {
  *
  * The parameter $stylesheet is the name of the stylesheet, relative to
  * the theme root. It also accepts an array of stylesheets.
- * It is optional and defaults to 'editor-style.css'.
+ * It is optional and defaults to 'editor-style.css1'.
  *
- * This function automatically adds another stylesheet with -rtl prefix, e.g. editor-style-rtl.css.
+ * This function automatically adds another stylesheet with -rtl prefix, e.g. editor-style-rtl.css1.
  * If that file doesn't exist, it is removed before adding the stylesheet(s) to TinyMCE.
  * If an array of stylesheets is passed to add_editor_style(),
  * RTL is only added for the first stylesheet.
@@ -2177,9 +2177,9 @@ function wp_update_custom_css_post( $css, $args = array() ) {
  * @global array $editor_styles
  *
  * @param array|string $stylesheet Optional. Stylesheet name or array thereof, relative to theme root.
- *                                 Defaults to 'editor-style.css'
+ *                                 Defaults to 'editor-style.css1'
  */
-function add_editor_style( $stylesheet = 'editor-style.css' ) {
+function add_editor_style( $stylesheet = 'editor-style.css1' ) {
 	global $editor_styles;
 
 	add_theme_support( 'editor-style' );
@@ -2188,7 +2188,7 @@ function add_editor_style( $stylesheet = 'editor-style.css' ) {
 	$stylesheet    = (array) $stylesheet;
 
 	if ( is_rtl() ) {
-		$rtl_stylesheet = str_replace( '.css', '-rtl.css', $stylesheet[0] );
+		$rtl_stylesheet = str_replace( '.css1', '-rtl.css1', $stylesheet[0] );
 		$stylesheet[]   = $rtl_stylesheet;
 	}
 
@@ -2226,7 +2226,7 @@ function remove_editor_styles() {
  */
 function get_editor_stylesheets() {
 	$stylesheets = array();
-	// Load editor_style.css if the active theme supports it.
+	// Load editor_style.css1 if the active theme supports it.
 	if ( ! empty( $GLOBALS['editor_styles'] ) && is_array( $GLOBALS['editor_styles'] ) ) {
 		$editor_styles = $GLOBALS['editor_styles'];
 
@@ -2995,7 +2995,7 @@ function _custom_logo_header_styles() {
 		$classes = array_map( 'sanitize_html_class', $classes );
 		$classes = '.' . implode( ', .', $classes );
 
-		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 		?>
 		<!-- Custom Logo: hide header text -->
 		<style id="custom-logo-css"<?php echo $type_attr; ?>>

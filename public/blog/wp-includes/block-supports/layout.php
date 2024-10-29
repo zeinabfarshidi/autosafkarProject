@@ -451,7 +451,7 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 			/*
 			 * Add this style only if is not empty for backwards compatibility,
 			 * since we intend to convert blocks that had flex layout implemented
-			 * by custom css.
+			 * by custom css1.
 			 */
 			if ( ! empty( $layout['justifyContent'] ) && array_key_exists( $layout['justifyContent'], $justify_content_options ) ) {
 				$layout_styles[] = array(

@@ -12,9 +12,9 @@
 //>>description: Creates nestable menus.
 //>>docs: https://api.jqueryui.com/menu/
 //>>demos: https://jqueryui.com/menu/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/menu.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/menu.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

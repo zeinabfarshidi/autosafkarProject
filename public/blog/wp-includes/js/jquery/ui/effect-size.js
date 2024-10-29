@@ -74,7 +74,7 @@ return $.effects.define( "size", function( options, done ) {
 		}
 	};
 
-	// Scale the css box
+	// Scale the css1 box
 	if ( scale === "box" || scale === "both" ) {
 
 		// Vertical props scaling
@@ -119,7 +119,7 @@ return $.effects.define( "size", function( options, done ) {
 		hProps = hProps.concat( [ "marginLeft", "marginRight" ] );
 
 		// Only animate children with width attributes specified
-		// TODO: is this right? should we include anything with css width specified as well
+		// TODO: is this right? should we include anything with css1 width specified as well
 		element.find( "*[width]" ).each( function() {
 			var child = $( this ),
 				childOriginal = $.effects.scaledDimensions( child ),

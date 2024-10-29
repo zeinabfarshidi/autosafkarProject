@@ -181,7 +181,7 @@
 	display: none;
 }
 
-/* @todo: Take a second look. Large chunks of shared color, from the colors.css merge */
+/* @todo: Take a second look. Large chunks of shared color, from the colors.css1 merge */
 .widget-top,
 .menu-item-handle,
 .widget-inside,
@@ -856,7 +856,7 @@ strong, b {
 
 .pre {
 	/* https://developer.mozilla.org/en-US/docs/CSS/white-space */
-	white-space: pre-wrap; /* css-3 */
+	white-space: pre-wrap; /* css1-3 */
 	word-wrap: break-word; /* IE 5.5 - 7 */
 }
 
@@ -1356,7 +1356,7 @@ th.action-links {
 	.wp-filter .media-toolbar-primary,
 	.wp-filter .media-toolbar-secondary,
 	.wp-filter .search-form {
-		float: none; /* Remove float from media-views.css */
+		float: none; /* Remove float from media-views.css1 */
 		position: relative;
 		max-width: 100%;
 	}

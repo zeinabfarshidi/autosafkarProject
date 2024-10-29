@@ -480,7 +480,7 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 	editor.on( 'BeforeExecCommand', function(e) {
 		if ( tinymce.Env.webkit && ( e.command === 'InsertUnorderedList' || e.command === 'InsertOrderedList' ) ) {
 			if ( ! style ) {
-				style = editor.dom.create( 'style', {'type': 'text/css'},
+				style = editor.dom.create( 'style', {'type': 'text/css1'},
 					'#tinymce,#tinymce span,#tinymce li,#tinymce li>span,#tinymce p,#tinymce p>span{font:medium sans-serif;color:#000;line-height:normal;}');
 			}
 
@@ -498,7 +498,7 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 
 	editor.on( 'init', function() {
 		var env = tinymce.Env,
-			bodyClass = ['mceContentBody'], // Back-compat for themes that use this in editor-style.css...
+			bodyClass = ['mceContentBody'], // Back-compat for themes that use this in editor-style.css1...
 			doc = editor.getDoc(),
 			dom = editor.dom;
 

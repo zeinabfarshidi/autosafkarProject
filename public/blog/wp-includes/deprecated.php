@@ -2896,8 +2896,8 @@ function debug_fclose( $fp ) {
  * Retrieve list of themes with theme data in theme directory.
  *
  * The theme is broken, if it doesn't have a parent theme and is missing either
- * style.css and, or index.php. If the theme has a parent theme then it is
- * broken, if it is missing style.css; index.php is optional.
+ * style.css1 and, or index.php. If the theme has a parent theme then it is
+ * broken, if it is missing style.css1; index.php is optional.
  *
  * @since 1.5.0
  * @deprecated 3.4.0 Use wp_get_themes()
@@ -5896,11 +5896,11 @@ function _wp_theme_json_webfonts_handler() {
 function print_embed_styles() {
 	_deprecated_function( __FUNCTION__, '6.4.0', 'wp_enqueue_embed_styles' );
 
-	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 	$suffix    = SCRIPT_DEBUG ? '' : '.min';
 	?>
 	<style<?php echo $type_attr; ?>>
-		<?php echo file_get_contents( ABSPATH . WPINC . "/css/wp-embed-template$suffix.css" ); ?>
+		<?php echo file_get_contents( ABSPATH . WPINC . "/css1/wp-embed-template$suffix.css1" ); ?>
 	</style>
 	<?php
 }
@@ -5921,7 +5921,7 @@ function print_emoji_styles() {
 
 	$printed = true;
 
-	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 	?>
 	<style<?php echo $type_attr; ?>>
 	img.wp-smiley,
@@ -5948,7 +5948,7 @@ function print_emoji_styles() {
  */
 function wp_admin_bar_header() {
 	_deprecated_function( __FUNCTION__, '6.4.0', 'wp_enqueue_admin_bar_header_styles' );
-	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 	?>
 	<style<?php echo $type_attr; ?> media="print">#wpadminbar { display:none; }</style>
 	<?php
@@ -5962,7 +5962,7 @@ function wp_admin_bar_header() {
  */
 function _admin_bar_bump_cb() {
 	_deprecated_function( __FUNCTION__, '6.4.0', 'wp_enqueue_admin_bar_bump_styles' );
-	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 	?>
 	<style<?php echo $type_attr; ?> media="screen">
 	html { margin-top: 32px !important; }

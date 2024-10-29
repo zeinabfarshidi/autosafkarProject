@@ -14,9 +14,9 @@
 /* eslint-enable max-len */
 //>>docs: https://api.jqueryui.com/selectmenu/
 //>>demos: https://jqueryui.com/selectmenu/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/selectmenu.css, ../../themes/base/button.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/selectmenu.css1, ../../themes/base/button.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

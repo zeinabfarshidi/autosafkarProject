@@ -68,8 +68,8 @@ function wp_apply_shadow_support( $block_type, $block_attributes ) {
 	$attributes = array();
 	$styles     = wp_style_engine_get_styles( $shadow_block_styles );
 
-	if ( ! empty( $styles['css'] ) ) {
-		$attributes['style'] = $styles['css'];
+	if ( ! empty( $styles['css1'] ) ) {
+		$attributes['style'] = $styles['css1'];
 	}
 
 	return $attributes;

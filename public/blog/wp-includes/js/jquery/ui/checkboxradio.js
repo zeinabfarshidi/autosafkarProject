@@ -12,10 +12,10 @@
 //>>description: Enhances a form with multiple themeable checkboxes or radio buttons.
 //>>docs: https://api.jqueryui.com/checkboxradio/
 //>>demos: https://jqueryui.com/checkboxradio/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/button.css
-//>>css.structure: ../../themes/base/checkboxradio.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/button.css1
+//>>css1.structure: ../../themes/base/checkboxradio.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

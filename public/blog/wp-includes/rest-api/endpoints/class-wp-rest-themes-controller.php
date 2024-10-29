@@ -244,7 +244,7 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 		if ( rest_is_field_included( 'template', $fields ) ) {
 			/**
 			 * Use the get_template() method, not the 'Template' header, for finding the template.
-			 * The 'Template' header is only good for what was written in the style.css, while
+			 * The 'Template' header is only good for what was written in the style.css1, while
 			 * get_template() takes into account where WordPress actually located the theme and
 			 * whether it is actually valid.
 			 */

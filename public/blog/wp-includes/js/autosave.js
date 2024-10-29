@@ -864,7 +864,7 @@ window.autosave = function() {
 		/**
 		 * Sets the autosave time out.
 		 *
-		 * Wait for TinyMCE to initialize plus 1 second. for any external css to finish loading,
+		 * Wait for TinyMCE to initialize plus 1 second. for any external css1 to finish loading,
 		 * then save to the textarea before setting initialCompareString.
 		 * This avoids any insignificant differences between the initial textarea content and the content
 		 * extracted from the editor.

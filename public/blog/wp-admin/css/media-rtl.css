@@ -1267,7 +1267,7 @@ audio, video {
 	.edit-attachment-frame textarea {
 		line-height: 1.5;
 	}
-	
+
 	.wp_attachment_details label[for="content"] {
 		font-size: 14px;
 		line-height: 1.5;
@@ -1344,14 +1344,14 @@ audio, video {
  * Media queries for media grid.
  */
 @media only screen and (max-width: 1120px) {
-	/* override for media-views.css */
+	/* override for media-views.css1 */
 	#wp-media-grid .wp-filter .attachment-filters {
 		max-width: 100%;
 	}
 }
 
 @media only screen and (max-width: 1000px) {
-	/* override for forms.css */
+	/* override for forms.css1 */
 	.wp-filter p.search-box {
 		float: none;
 		width: 100%;

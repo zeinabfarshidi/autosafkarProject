@@ -78,7 +78,7 @@ function wp_render_background_support( $block_content, $block ) {
 
 	$styles = wp_style_engine_get_styles( array( 'background' => $background_styles ) );
 
-	if ( ! empty( $styles['css'] ) ) {
+	if ( ! empty( $styles['css1'] ) ) {
 		// Inject background styles to the first element, presuming it's the wrapper, if it exists.
 		$tags = new WP_HTML_Tag_Processor( $block_content );
 
@@ -93,7 +93,7 @@ function wp_render_background_support( $block_content, $block ) {
 				}
 			}
 
-			$updated_style .= $styles['css'];
+			$updated_style .= $styles['css1'];
 			$tags->set_attribute( 'style', $updated_style );
 			$tags->add_class( 'has-background' );
 		}

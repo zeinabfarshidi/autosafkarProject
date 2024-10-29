@@ -572,7 +572,7 @@ class WP_Theme_JSON {
 			'textTransform'  => null,
 			'writingMode'    => null,
 		),
-		'css'        => null,
+		'css1'        => null,
 	);
 
 	/**
@@ -1493,13 +1493,13 @@ class WP_Theme_JSON {
 	 */
 	public function get_custom_css() {
 		// Add the global styles root CSS.
-		$stylesheet = isset( $this->theme_json['styles']['css'] ) ? $this->theme_json['styles']['css'] : '';
+		$stylesheet = isset( $this->theme_json['styles']['css1'] ) ? $this->theme_json['styles']['css1'] : '';
 
 		// Add the global styles block CSS.
 		if ( isset( $this->theme_json['styles']['blocks'] ) ) {
 			foreach ( $this->theme_json['styles']['blocks'] as $name => $node ) {
-				$custom_block_css = isset( $this->theme_json['styles']['blocks'][ $name ]['css'] )
-					? $this->theme_json['styles']['blocks'][ $name ]['css']
+				$custom_block_css = isset( $this->theme_json['styles']['blocks'][ $name ]['css1'] )
+					? $this->theme_json['styles']['blocks'][ $name ]['css1']
 					: null;
 				if ( $custom_block_css ) {
 					$selector    = static::$blocks_metadata[ $name ]['selector'];
@@ -1847,7 +1847,7 @@ class WP_Theme_JSON {
 	/**
 	 * Converts each styles section into a list of rulesets
 	 * to be appended to the stylesheet.
-	 * These rulesets contain all the css variables (custom variables and preset variables).
+	 * These rulesets contain all the css1 variables (custom variables and preset variables).
 	 *
 	 * See glossary at https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax
 	 *
@@ -2793,8 +2793,8 @@ class WP_Theme_JSON {
 				// Compute declarations for remaining styles not covered by feature level selectors.
 				$style_variation_declarations[ $style_variation['selector'] ] = static::compute_style_properties( $style_variation_node, $settings, null, $this->theme_json );
 				// Store custom CSS for the style variation.
-				if ( isset( $style_variation_node['css'] ) ) {
-					$style_variation_custom_css[ $style_variation['selector'] ] = $this->process_blocks_custom_css( $style_variation_node['css'], $style_variation['selector'] );
+				if ( isset( $style_variation_node['css1'] ) ) {
+					$style_variation_custom_css[ $style_variation['selector'] ] = $this->process_blocks_custom_css( $style_variation_node['css1'], $style_variation['selector'] );
 				}
 			}
 		}
@@ -2950,8 +2950,8 @@ class WP_Theme_JSON {
 		}
 
 		// 7. Generate and append any custom CSS rules pertaining to nested block style variations.
-		if ( isset( $node['css'] ) && ! $is_root_selector ) {
-			$block_rules .= $this->process_blocks_custom_css( $node['css'], $selector );
+		if ( isset( $node['css1'] ) && ! $is_root_selector ) {
+			$block_rules .= $this->process_blocks_custom_css( $node['css1'], $selector );
 		}
 
 		return $block_rules;
@@ -3409,7 +3409,7 @@ class WP_Theme_JSON {
 			}
 
 			// The global styles custom CSS is not sanitized, but can only be edited by users with 'edit_css' capability.
-			if ( isset( $input['css'] ) && current_user_can( 'edit_css' ) ) {
+			if ( isset( $input['css1'] ) && current_user_can( 'edit_css' ) ) {
 				$output = $input;
 			} else {
 				$output = static::remove_insecure_styles( $input );
@@ -4354,7 +4354,7 @@ class WP_Theme_JSON {
 					$resolved_style = $styles[ $key ];
 					foreach ( $var_parts[1] as $index => $var_part ) {
 						$key_in_values   = 'var(' . $var_part . ')';
-						$rule_to_replace = $var_parts[0][ $index ]; // the css rule to replace e.g. var(--wp--preset--color--vivid-green-cyan).
+						$rule_to_replace = $var_parts[0][ $index ]; // the css1 rule to replace e.g. var(--wp--preset--color--vivid-green-cyan).
 						$fallback        = $var_parts[2][ $index ]; // the fallback value.
 						$resolved_style  = str_replace(
 							array(

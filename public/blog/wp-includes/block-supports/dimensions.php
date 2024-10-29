@@ -76,8 +76,8 @@ function wp_apply_dimensions_support( $block_type, $block_attributes ) {
 	}
 	$styles = wp_style_engine_get_styles( array( 'dimensions' => $dimensions_block_styles ) );
 
-	if ( ! empty( $styles['css'] ) ) {
-		$attributes['style'] = $styles['css'];
+	if ( ! empty( $styles['css1'] ) ) {
+		$attributes['style'] = $styles['css1'];
 	}
 
 	return $attributes;
@@ -124,7 +124,7 @@ function wp_render_dimensions_support( $block_content, $block ) {
 
 	$styles = wp_style_engine_get_styles( array( 'dimensions' => $dimensions_block_styles ) );
 
-	if ( ! empty( $styles['css'] ) ) {
+	if ( ! empty( $styles['css1'] ) ) {
 		// Inject dimensions styles to the first element, presuming it's the wrapper, if it exists.
 		$tags = new WP_HTML_Tag_Processor( $block_content );
 
@@ -139,7 +139,7 @@ function wp_render_dimensions_support( $block_content, $block ) {
 				}
 			}
 
-			$updated_style .= $styles['css'];
+			$updated_style .= $styles['css1'];
 			$tags->set_attribute( 'style', $updated_style );
 
 			if ( ! empty( $styles['classnames'] ) ) {

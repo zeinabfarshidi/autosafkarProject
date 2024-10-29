@@ -1965,7 +1965,7 @@
 	color: #646970;
 }
 
-/* higher specificity than media.css */
+/* higher specificity than media.css1 */
 .wp-core-ui.media-modal .image-editor .imgedit-help-toggle,
 .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:hover,
 .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:active {
@@ -2261,7 +2261,7 @@
 
 .media-embed .content-track + .description {
 	line-height: 1.4;
-	/* The !important needs to override a high specificity selector from wp-medialement.css */
+	/* The !important needs to override a high specificity selector from wp-medialement.css1 */
 	max-width: none !important;
 }
 

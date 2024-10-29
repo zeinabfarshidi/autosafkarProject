@@ -12,9 +12,9 @@
 //>>description: Lists suggested words as the user is typing.
 //>>docs: https://api.jqueryui.com/autocomplete/
 //>>demos: https://jqueryui.com/autocomplete/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/autocomplete.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/autocomplete.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

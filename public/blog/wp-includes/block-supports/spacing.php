@@ -72,8 +72,8 @@ function wp_apply_spacing_support( $block_type, $block_attributes ) {
 	}
 	$styles = wp_style_engine_get_styles( array( 'spacing' => $spacing_block_styles ) );
 
-	if ( ! empty( $styles['css'] ) ) {
-		$attributes['style'] = $styles['css'];
+	if ( ! empty( $styles['css1'] ) ) {
+		$attributes['style'] = $styles['css1'];
 	}
 
 	return $attributes;

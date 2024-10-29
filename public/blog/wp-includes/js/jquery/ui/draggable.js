@@ -12,7 +12,7 @@
 //>>description: Enables dragging functionality for any element.
 //>>docs: https://api.jqueryui.com/draggable/
 //>>demos: https://jqueryui.com/draggable/
-//>>css.structure: ../../themes/base/draggable.css
+//>>css1.structure: ../../themes/base/draggable.css1
 
 ( function( factory ) {
 	"use strict";
@@ -186,7 +186,7 @@ $.widget( "ui.draggable", $.ui.mouse, {
 		//Cache the margins of the original element
 		this._cacheMargins();
 
-		//Store the helper's css position
+		//Store the helper's css1 position
 		this.cssPosition = this.helper.css( "position" );
 		this.scrollParent = this.helper.scrollParent( true );
 		this.offsetParent = this.helper.offsetParent();

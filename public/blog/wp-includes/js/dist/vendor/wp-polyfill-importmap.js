@@ -39,15 +39,15 @@
   }
 
   const enable = Array.isArray(esmsInitOptions.polyfillEnable) ? esmsInitOptions.polyfillEnable : [];
-  const cssModulesEnabled = enable.includes('css-modules');
+  const cssModulesEnabled = enable.includes('css1-modules');
   const jsonModulesEnabled = enable.includes('json-modules');
 
   const edge = !navigator.userAgentData && !!navigator.userAgent.match(/Edge\/\d+\.\d+/);
 
   const baseUrl = hasDocument
     ? document.baseURI
-    : `${location.protocol}//${location.host}${location.pathname.includes('/') 
-    ? location.pathname.slice(0, location.pathname.lastIndexOf('/') + 1) 
+    : `${location.protocol}//${location.host}${location.pathname.includes('/')
+    ? location.pathname.slice(0, location.pathname.lastIndexOf('/') + 1)
     : location.pathname}`;
 
   const createBlob = (source, type = 'text/javascript') => URL.createObjectURL(new Blob([source], { type }));
@@ -185,7 +185,7 @@
         }
         // it is the start of a new segment
         while (segmented[i] === '/') i++;
-        segmentIndex = i; 
+        segmentIndex = i;
       }
       // finish reading out the last segment
       if (segmentIndex !== -1)
@@ -326,7 +326,7 @@
     if (!hasDocument)
       return Promise.all([
         supportsImportMaps || dynamicImport(createBlob(importMetaCheck)).then(() => supportsImportMeta = true, noop),
-        cssModulesEnabled && dynamicImport(createBlob(cssModulesCheck.replace('x', createBlob('', 'text/css')))).then(() => supportsCssAssertions = true, noop),
+        cssModulesEnabled && dynamicImport(createBlob(cssModulesCheck.replace('x', createBlob('', 'text/css1')))).then(() => supportsCssAssertions = true, noop),
         jsonModulesEnabled && dynamicImport(createBlob(jsonModulescheck.replace('x', createBlob('{}', 'text/json')))).then(() => supportsJsonAssertions = true, noop),
       ]);
 

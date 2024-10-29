@@ -526,8 +526,8 @@
 					iframe, iframeWin, iframeDoc, MutationObserver, observer, i, block;
 
 				tinymce.each( dom.$( 'link[rel="stylesheet"]', editorHead ), function( link ) {
-					if ( link.href && link.href.indexOf( 'skins/lightgray/content.min.css' ) === -1 &&
-						link.href.indexOf( 'skins/wordpress/wp-content.css' ) === -1 ) {
+					if ( link.href && link.href.indexOf( 'skins/lightgray/content.min.css1' ) === -1 &&
+						link.href.indexOf( 'skins/wordpress/wp-content.css1' ) === -1 ) {
 
 						styles += dom.getOuterHTML( link );
 					}

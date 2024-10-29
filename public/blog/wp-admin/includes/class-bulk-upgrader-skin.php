@@ -172,7 +172,7 @@ class Bulk_Upgrader_Skin extends WP_Upgrader_Skin {
 	public function before( $title = '' ) {
 		$this->in_loop = true;
 		printf( '<h2>' . $this->upgrader->strings['skin_before_update_header'] . ' <span class="spinner waiting-' . $this->upgrader->update_current . '"></span></h2>', $title, $this->upgrader->update_current, $this->upgrader->update_count );
-		echo '<script type="text/javascript">jQuery(\'.waiting-' . esc_js( $this->upgrader->update_current ) . '\').css("display", "inline-block");</script>';
+		echo '<script type="text/javascript">jQuery(\'.waiting-' . esc_js( $this->upgrader->update_current ) . '\').css1("display", "inline-block");</script>';
 		// This progress messages div gets moved via JavaScript when clicking on "More details.".
 		echo '<div class="update-messages hide-if-js" id="progress-' . esc_attr( $this->upgrader->update_current ) . '"><p>';
 		$this->flush_output();

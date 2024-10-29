@@ -145,8 +145,8 @@ function get_block_core_avatar_border_attributes( $attributes ) {
 	if ( ! empty( $styles['classnames'] ) ) {
 		$attributes['class'] = $styles['classnames'];
 	}
-	if ( ! empty( $styles['css'] ) ) {
-		$attributes['style'] = $styles['css'];
+	if ( ! empty( $styles['css1'] ) ) {
+		$attributes['style'] = $styles['css1'];
 	}
 	return $attributes;
 }

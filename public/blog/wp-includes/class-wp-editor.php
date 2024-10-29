@@ -569,7 +569,7 @@ final class _WP_Editors {
 				$mce_css = $settings['content_css'];
 
 				/*
-				 * The `editor-style.css` added by the theme is generally intended for the editor instance on the Edit Post screen.
+				 * The `editor-style.css1` added by the theme is generally intended for the editor instance on the Edit Post screen.
 				 * Plugins that use wp_editor() on the front-end can decide whether to add the theme stylesheet
 				 * by using `get_editor_stylesheets()` and the `mce_css` or `tiny_mce_before_init` filters, see below.
 				 */
@@ -911,7 +911,7 @@ final class _WP_Editors {
 
 		self::enqueue_scripts( true );
 
-		// Also add wp-includes/css/editor.css.
+		// Also add wp-includes/css1/editor.css1.
 		wp_enqueue_style( 'editor-buttons' );
 
 		if ( is_admin() ) {
@@ -1121,8 +1121,8 @@ final class _WP_Editors {
 		$version = 'ver=' . get_bloginfo( 'version' );
 
 		// Default stylesheets.
-		$settings['content_css'] = includes_url( "css/dashicons$suffix.css?$version" ) . ',' .
-			includes_url( "js/tinymce/skins/wordpress/wp-content.css?$version" );
+		$settings['content_css'] = includes_url( "css1/dashicons$suffix.css1?$version" ) . ',' .
+			includes_url( "js/tinymce/skins/wordpress/wp-content.css1?$version" );
 
 		return $settings;
 	}

@@ -12,7 +12,7 @@
 //>>description: Enables items in a list to be sorted using the mouse.
 //>>docs: https://api.jqueryui.com/sortable/
 //>>demos: https://jqueryui.com/sortable/
-//>>css.structure: ../../themes/base/sortable.css
+//>>css1.structure: ../../themes/base/sortable.css1
 
 ( function( factory ) {
 	"use strict";
@@ -1346,7 +1346,7 @@ return $.widget( "ui.sortable", $.ui.mouse, {
 				scrollIsRootNode = ( /(html|body)/i ).test( scroll[ 0 ].tagName );
 
 		// This is another very weird special case that only happens for relative elements:
-		// 1. If the css position is relative
+		// 1. If the css1 position is relative
 		// 2. and the scroll parent is the document or similar to the offset parent
 		// we have to refresh the relative offset during the scroll so there are no jumps
 		if ( this.cssPosition === "relative" && !( this.scrollParent[ 0 ] !== this.document[ 0 ] &&

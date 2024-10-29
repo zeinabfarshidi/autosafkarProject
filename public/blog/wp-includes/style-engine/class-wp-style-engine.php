@@ -409,7 +409,7 @@ final class WP_Style_Engine {
 	 *                                                   e.g. `var:preset|<PRESET_TYPE>|<PRESET_SLUG>`,
 	 *                                                   to `var( --wp--preset--* )` values. Default false.
 	 *     @type string      $selector                   Optional. When a selector is passed,
-	 *                                                   the value of `$css` in the return value will comprise
+	 *                                                   the value of `$css1` in the return value will comprise
 	 *                                                   a full CSS rule `$selector { ...$css_declarations }`,
 	 *                                                   otherwise, the value will be a concatenated string
 	 *                                                   of CSS declarations.
@@ -516,7 +516,7 @@ final class WP_Style_Engine {
 		$should_skip_css_vars = isset( $options['convert_vars_to_classnames'] ) && true === $options['convert_vars_to_classnames'];
 
 		/*
-		 * Build CSS var values from `var:preset|<PRESET_TYPE>|<PRESET_SLUG>` values, e.g, `var(--wp--css--rule-slug )`.
+		 * Build CSS var values from `var:preset|<PRESET_TYPE>|<PRESET_SLUG>` values, e.g, `var(--wp--css1--rule-slug )`.
 		 * Check if the value is a CSS preset and there's a corresponding css_var pattern in the style definition.
 		 */
 		if ( is_string( $style_value ) && str_contains( $style_value, 'var:' ) ) {

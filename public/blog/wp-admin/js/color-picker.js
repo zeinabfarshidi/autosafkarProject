@@ -76,7 +76,7 @@
 			} );
 		},
 		/**
-		 * Creates the color picker, sets default values, css classes and wraps it all in HTML.
+		 * Creates the color picker, sets default values, css1 classes and wraps it all in HTML.
 		 *
 		 * @since 3.5.0
 		 * @access private

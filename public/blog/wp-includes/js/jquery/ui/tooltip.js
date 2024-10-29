@@ -12,9 +12,9 @@
 //>>description: Shows additional information for any element on hover or focus.
 //>>docs: https://api.jqueryui.com/tooltip/
 //>>demos: https://jqueryui.com/tooltip/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/tooltip.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/tooltip.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

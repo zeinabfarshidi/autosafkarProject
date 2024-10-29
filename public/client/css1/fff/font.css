@@ -1,0 +1,649 @@
+@font-face {
+    font-family: __danaFont_e5590e;
+    src: url(fonts/1ff7883424788526-s.p.woff) format("woff");
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: __danaFont_e5590e;
+    src: url(fonts/cda65d7f8d494adc-s.p.woff) format("woff");
+    font-display: swap;
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: __danaFont_e5590e;
+    src: url(fonts/73d4d91103e546fb-s.p.woff) format("woff");
+    font-display: swap;
+    font-weight: 800;
+    font-style: normal
+}
+
+@font-face {
+    font-family: __danaFont_e5590e;
+    src: url(fonts/6aadb4ac85a1ae01-s.p.woff) format("woff");
+    font-display: swap;
+    font-weight: 750;
+    font-style: normal
+}
+
+@font-face {
+    font-family: __danaFont_e5590e;
+    src: url(fonts/5f08647b45176430-s.p.woff) format("woff");
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: __danaFont_e5590e;
+    src: url(fonts/8703b809e4311510-s.p.woff) format("woff");
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: __danaFont_e5590e;
+    src: url(fonts/e6fd6b6fc602d413-s.p.woff) format("woff");
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: __danaFont_Fallback_e5590e;
+    src: local("Arial");
+    ascent-override: 95.41%;
+    descent-override: 57.81%;
+    line-gap-override: .00%;
+    size-adjust: 98.94%
+}
+
+/*@font-face {*/
+/*    font-family: icomoon;*/
+/*    src: url(fonts/icomoon.eot?8ptx6u);*/
+/*    src: url(fonts/icomoon.eot?8ptx6u#iefix) format("embedded-opentype"), url(/fonts/icons/icomoon.ttf?8ptx6u) format("truetype"), url(/fonts/icons/icomoon.woff?8ptx6u) format("woff"), url(/fonts/icons/icomoon.svg?8ptx6u#icomoon) format("svg");*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*    font-display: block*/
+/*}*/
+
+.__className_e5590e {
+    font-family: __danaFont_e5590e, __danaFont_Fallback_e5590e
+}
+
+* {
+    text-align: initial
+}
+
+.fs-xxs {
+    font-size: .5rem !important
+}
+
+.fs-xs {
+    font-size: .625rem !important
+}
+
+.fs-11 {
+    font-size: .6875rem !important
+}
+
+.fs-sm {
+    font-size: .75rem !important
+}
+
+.fs-13 {
+    font-size: .8125rem !important
+}
+
+.fs-md {
+    font-size: .875rem !important
+}
+
+.fs-15 {
+    font-size: .9375rem !important
+}
+
+.fs-lg {
+    font-size: 1rem !important
+}
+
+.fs-18 {
+    font-size: 1.125rem !important
+}
+
+.fs-xl {
+    font-size: 1.25rem !important
+}
+
+.fs-xxl {
+    font-size: 1.5rem !important
+}
+
+@media screen and (max-width: 1199px) {
+    .fs-xxl {
+        font-size: 1.25rem !important
+    }
+}
+
+.fs-26 {
+    font-size: 1.625rem !important
+}
+
+@media screen and (max-width: 1199px) {
+    .fs-26 {
+        font-size: 1.5rem !important
+    }
+}
+
+.fs-28 {
+    font-size: 1.75rem !important
+}
+
+@media screen and (max-width: 1199px) {
+    .fs-28 {
+        font-size: 1.25rem !important
+    }
+}
+
+.fs-30 {
+    font-size: 1.5rem !important
+}
+
+@media screen and (max-width: 1199px) {
+    .fs-30 {
+        font-size: 2rem !important
+    }
+}
+
+.fs-32 {
+    font-size: 1.75rem !important
+}
+
+@media screen and (max-width: 960px) {
+    .fs-32 {
+        font-size: 1rem !important
+    }
+}
+
+.fs-48 {
+    font-size: 3rem !important
+}
+
+@media screen and (max-width: 960px) {
+    .fs-48 {
+        font-size: 1.25rem !important
+    }
+}
+
+.font-weight-thin {
+    font-weight: 10 !important
+}
+
+.font-weight-extralight {
+    font-weight: 200 !important
+}
+
+.font-weight-light {
+    font-weight: 300 !important
+}
+
+.font-weight-regular {
+    font-weight: 400 !important
+}
+
+.font-weight-medium {
+    font-weight: 500 !important
+}
+
+.font-weight-demibold {
+    font-weight: 600 !important
+}
+
+.font-weight-bold {
+    font-weight: 700 !important
+}
+
+.font-weight-ultrabold {
+    font-weight: 750 !important
+}
+
+.font-weight-extrabold {
+    font-weight: 800 !important
+}
+
+.text-justify {
+    text-align: justify
+}
+
+[class*=" icon-"], [class^="icon-"] {
+    font-family: icomoon !important;
+    speak: never;
+    font-style: normal;
+    font-weight: 400;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-clock:before {
+    content: ""
+}
+
+.icon-money-2:before {
+    content: ""
+}
+
+.icon-plumber-man-1:before {
+    content: ""
+}
+
+.icon-verified:before {
+    content: ""
+}
+
+.icon-price:before {
+    content: ""
+}
+
+.icon-tik:before {
+    content: ""
+}
+
+.icon-edit-pen:before {
+    content: ""
+}
+
+.icon-add-image:before {
+    content: ""
+}
+
+.icon-back:before {
+    content: ""
+}
+
+.icon-calendar:before {
+    content: ""
+}
+
+.icon-call:before {
+    content: ""
+}
+
+.icon-chat:before {
+    content: ""
+}
+
+.icon-check:before {
+    content: ""
+}
+
+.icon-checkbox:before {
+    content: ""
+}
+
+.icon-close:before {
+    content: ""
+}
+
+.icon-dashboard:before {
+    content: ""
+}
+
+.icon-delete:before {
+    content: ""
+}
+
+.icon-doctor-man:before {
+    content: ""
+}
+
+.icon-doctor-woman:before {
+    content: ""
+}
+
+.icon-dollar:before {
+    content: ""
+}
+
+.icon-down-arrow:before {
+    content: ""
+}
+
+.icon-edit:before {
+    content: ""
+}
+
+.icon-facebook:before {
+    content: ""
+}
+
+.icon-home:before {
+    content: ""
+}
+
+.icon-image:before {
+    content: ""
+}
+
+.icon-info:before {
+    content: ""
+}
+
+.icon-instagram:before {
+    content: ""
+}
+
+.icon-like:before {
+    content: ""
+}
+
+.icon-linkedin:before {
+    content: ""
+}
+
+.icon-location:before {
+    content: ""
+}
+
+.icon-maid-man:before {
+    content: ""
+}
+
+.icon-mailbox:before {
+    content: ""
+}
+
+.icon-man:before {
+    content: ""
+}
+
+.icon-menu:before {
+    content: ""
+}
+
+.icon-personal-Info:before {
+    content: ""
+}
+
+.icon-photo:before {
+    content: ""
+}
+
+.icon-plus:before {
+    content: ""
+}
+
+.icon-printer:before {
+    content: ""
+}
+
+.icon-QA:before {
+    content: ""
+}
+
+.icon-search:before {
+    content: ""
+}
+
+.icon-Share:before {
+    content: ""
+}
+
+.icon-shine:before {
+    content: ""
+}
+
+.icon-signal:before {
+    content: ""
+}
+
+.icon-smartphone:before {
+    content: ""
+}
+
+.icon-telegram:before {
+    content: ""
+}
+
+.icon-text:before {
+    content: ""
+}
+
+.icon-time:before {
+    content: ""
+}
+
+.icon-twitter:before {
+    content: ""
+}
+
+.icon-up-arrow:before {
+    content: ""
+}
+
+.icon-user:before {
+    content: ""
+}
+
+.icon-view:before {
+    content: ""
+}
+
+.icon-wallet:before {
+    content: ""
+}
+
+.icon-woman:before {
+    content: ""
+}
+
+.icon-worker-man:before {
+    content: ""
+}
+
+.icon-worker-woman:before {
+    content: ""
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    background-color: #fff !important;
+    color: #3d3d3d;
+    scroll-behavior: smooth
+}
+
+img {
+    pointer-events: none
+}
+
+a {
+    color: inherit
+}
+
+a, a:hover {
+    text-decoration: none
+}
+
+a:hover {
+    color: inherit !important
+}
+
+.no-scroll {
+    overflow: hidden !important
+}
+
+* {
+    box-sizing: border-box
+}
+
+*, :active, :focus {
+    outline: none !important
+}
+
+::-webkit-scrollbar {
+    width: 8px
+}
+
+::-webkit-scrollbar-track {
+    background: #e7e5e5
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4bd274
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3ebc64
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+input[type="number"] {
+    -moz-appearance: textfield
+}
+
+.slick-dots li {
+    margin: 0;
+    width: 17px
+}
+
+.disable-scrollbars {
+    scrollbar-width: none;
+    -ms-overflow-style: none
+}
+
+.disable-scrollbars::-webkit-scrollbar {
+    background: transparent;
+    width: 0;
+    height: 0
+}
+
+.content-carousel-card .card-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 60px
+}
+
+.content-carousel-card .card-content-wrapper:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 2px);
+    height: calc(100% - 50px);
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #000;
+    left: 0;
+    border-radius: 50px
+}
+
+.content-carousel-card .card-content-wrapper .text-box {
+    padding-right: 50px
+}
+
+.MuiPopover-root {
+    z-index: 99999 !important
+}
+
+.googletagstyle {
+    display: none;
+    visibility: hidden
+}
+
+.MuiMenuItem-root {
+    white-space: normal !important
+}
+
+.r1_iframe_embed {
+    border-radius: 24px;
+    height: 554px !important
+}
+
+.video-js .vjs-tech {
+    padding-top: 87.25% !important
+}
+
+.PrivatePickersYear-yearButton {
+    text-align: center
+}
+
+@media screen and (max-width: 768px) {
+    .video-js .vjs-tech {
+        padding-top: 7.25% !important
+    }
+
+    .r1_iframe_embed {
+        border-radius: 24px;
+        height: 214px !important
+    }
+}
+
+.bg-gray {
+    background-color: #f5f5f5 !important
+}
+
+#myAudio::-webkit-media-controls-panel {
+    background-color: #8d9cfe;
+    color: #fff;
+    width: 100% !important;
+    border-radius: 12px !important
+}
+
+#myAudio {
+    width: 100% !important;
+    border-radius: 12px !important
+}
+
+#myAudioMe::-webkit-media-controls-panel {
+    background-color: #4bd274;
+    color: #fff;
+    width: 100% !important;
+    border-radius: 12px !important
+}
+
+#myAudioMe {
+    height: 36px !important;
+    width: 100% !important;
+    border-radius: 12px !important
+}
+
+#myAudioOther::-webkit-media-controls-panel {
+    background-color: #5b70f3;
+    color: #fff;
+    width: 100% !important;
+    border-radius: 12px !important
+}
+
+#myAudioOther {
+    height: 36px !important;
+    width: 100% !important;
+    border-radius: 12px !important
+}
+
+#myAudioMe::-webkit-media-controls-current-time-display {
+    color: #fff
+}
+
+.leaflet-touch .leaflet-bar, .leaflet-touch .leaflet-control-layers {
+    display: none
+}
+
+textarea {
+    resize: none
+}

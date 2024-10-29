@@ -67,7 +67,7 @@ function register_core_block_style_handles() {
 	}
 
 	if ( ! $files ) {
-		$files = glob( wp_normalize_path( BLOCKS_PATH . '**/**.css' ) );
+		$files = glob( wp_normalize_path( BLOCKS_PATH . '**/**.css1' ) );
 
 		// Normalize BLOCKS_PATH prior to substitution for Windows environments.
 		$normalized_blocks_path = wp_normalize_path( BLOCKS_PATH );
@@ -92,7 +92,7 @@ function register_core_block_style_handles() {
 	}
 
 	$register_style = static function ( $name, $filename, $style_handle ) use ( $blocks_url, $suffix, $wp_styles, $files ) {
-		$style_path = "{$name}/{$filename}{$suffix}.css";
+		$style_path = "{$name}/{$filename}{$suffix}.css1";
 		$path       = wp_normalize_path( BLOCKS_PATH . $style_path );
 
 		if ( ! in_array( $style_path, $files, true ) ) {
@@ -106,11 +106,11 @@ function register_core_block_style_handles() {
 		$wp_styles->add( $style_handle, $blocks_url . $style_path );
 		$wp_styles->add_data( $style_handle, 'path', $path );
 
-		$rtl_file = "{$name}/{$filename}-rtl{$suffix}.css";
+		$rtl_file = "{$name}/{$filename}-rtl{$suffix}.css1";
 		if ( is_rtl() && in_array( $rtl_file, $files, true ) ) {
 			$wp_styles->add_data( $style_handle, 'rtl', 'replace' );
 			$wp_styles->add_data( $style_handle, 'suffix', $suffix );
-			$wp_styles->add_data( $style_handle, 'path', str_replace( "{$suffix}.css", "-rtl{$suffix}.css", $path ) );
+			$wp_styles->add_data( $style_handle, 'path', str_replace( "{$suffix}.css1", "-rtl{$suffix}.css1", $path ) );
 		}
 	};
 

@@ -45,12 +45,12 @@ add_filter( 'render_block', array( 'WP_Duotone', 'render_duotone_support' ), 10,
 add_filter( 'render_block_core/image', array( 'WP_Duotone', 'restore_image_outer_container' ), 10, 1 );
 
 // Enqueue styles.
-// Block styles (core-block-supports-inline-css) before the style engine (wp_enqueue_stored_styles).
-// Global styles (global-styles-inline-css) after the other global styles (wp_enqueue_global_styles).
+// Block styles (core-block-supports-inline-css1) before the style engine (wp_enqueue_stored_styles).
+// Global styles (global-styles-inline-css1) after the other global styles (wp_enqueue_global_styles).
 add_action( 'wp_enqueue_scripts', array( 'WP_Duotone', 'output_block_styles' ), 9 );
 add_action( 'wp_enqueue_scripts', array( 'WP_Duotone', 'output_global_styles' ), 11 );
 
-// Add SVG filters to the footer. Also, for classic themes, output block styles (core-block-supports-inline-css).
+// Add SVG filters to the footer. Also, for classic themes, output block styles (core-block-supports-inline-css1).
 add_action( 'wp_footer', array( 'WP_Duotone', 'output_footer_assets' ), 10 );
 
 // Add styles and SVGs for use in the editor via the EditorStyles component.

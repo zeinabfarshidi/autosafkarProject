@@ -12,9 +12,9 @@
 //>>description: Displays buttons to easily input numbers via the keyboard or mouse.
 //>>docs: https://api.jqueryui.com/spinner/
 //>>demos: https://jqueryui.com/spinner/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/spinner.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/spinner.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

@@ -1074,7 +1074,7 @@ function wp_enqueue_embed_styles() {
 	$suffix = wp_scripts_get_suffix();
 	$handle = 'wp-embed-template';
 	wp_register_style( $handle, false );
-	wp_add_inline_style( $handle, file_get_contents( ABSPATH . WPINC . "/css/wp-embed-template$suffix.css" ) );
+	wp_add_inline_style( $handle, file_get_contents( ABSPATH . WPINC . "/css1/wp-embed-template$suffix.css1" ) );
 	wp_enqueue_style( $handle );
 }
 

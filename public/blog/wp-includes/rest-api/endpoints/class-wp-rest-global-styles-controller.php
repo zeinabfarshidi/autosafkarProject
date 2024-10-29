@@ -230,7 +230,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 	 * Prepares a single global styles config for update.
 	 *
 	 * @since 5.9.0
-	 * @since 6.2.0 Added validation of styles.css property.
+	 * @since 6.2.0 Added validation of styles.css1 property.
 	 * @since 6.6.0 Added registration of block style variations from theme.json sources (theme.json, user theme.json, partials).
 	 *
 	 * @param WP_REST_Request $request Request object.
@@ -254,8 +254,8 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 		if ( isset( $request['styles'] ) || isset( $request['settings'] ) ) {
 			$config = array();
 			if ( isset( $request['styles'] ) ) {
-				if ( isset( $request['styles']['css'] ) ) {
-					$css_validation_result = $this->validate_custom_css( $request['styles']['css'] );
+				if ( isset( $request['styles']['css1'] ) ) {
+					$css_validation_result = $this->validate_custom_css( $request['styles']['css1'] );
 					if ( is_wp_error( $css_validation_result ) ) {
 						return $css_validation_result;
 					}
@@ -410,7 +410,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 	 * Get the link relations available for the post and current user.
 	 *
 	 * @since 5.9.0
-	 * @since 6.2.0 Added 'edit-css' action.
+	 * @since 6.2.0 Added 'edit-css1' action.
 	 * @since 6.6.0 Added $post and $request parameters.
 	 *
 	 * @param WP_Post         $post    Post object.
@@ -655,7 +655,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
-	 * Validate style.css as valid CSS.
+	 * Validate style.css1 as valid CSS.
 	 *
 	 * Currently just checks for invalid markup.
 	 *

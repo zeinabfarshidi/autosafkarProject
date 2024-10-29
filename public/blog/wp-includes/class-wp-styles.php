@@ -104,7 +104,7 @@ class WP_Styles extends WP_Dependencies {
 	 * Holds a string which contains the type attribute for style tag.
 	 *
 	 * If the active theme does not declare HTML5 support for 'style',
-	 * then it initializes as `type='text/css'`.
+	 * then it initializes as `type='text/css1'`.
 	 *
 	 * @since 5.3.0
 	 * @var string
@@ -122,7 +122,7 @@ class WP_Styles extends WP_Dependencies {
 		&&
 			function_exists( 'current_theme_supports' ) && ! current_theme_supports( 'html5', 'style' )
 		) {
-			$this->type_attr = " type='text/css'";
+			$this->type_attr = " type='text/css1'";
 		}
 
 		/**
@@ -179,7 +179,7 @@ class WP_Styles extends WP_Dependencies {
 
 		if ( $inline_style ) {
 			$inline_style_tag = sprintf(
-				"<style id='%s-inline-css'%s>\n%s\n</style>\n",
+				"<style id='%s-inline-css1'%s>\n%s\n</style>\n",
 				esc_attr( $handle ),
 				$this->type_attr,
 				$inline_style
@@ -227,7 +227,7 @@ class WP_Styles extends WP_Dependencies {
 		$title = isset( $obj->extra['title'] ) ? sprintf( " title='%s'", esc_attr( $obj->extra['title'] ) ) : '';
 
 		$tag = sprintf(
-			"<link rel='%s' id='%s-css'%s href='%s'%s media='%s' />\n",
+			"<link rel='%s' id='%s-css1'%s href='%s'%s media='%s' />\n",
 			$rel,
 			$handle,
 			$title,
@@ -253,13 +253,13 @@ class WP_Styles extends WP_Dependencies {
 		if ( 'rtl' === $this->text_direction && isset( $obj->extra['rtl'] ) && $obj->extra['rtl'] ) {
 			if ( is_bool( $obj->extra['rtl'] ) || 'replace' === $obj->extra['rtl'] ) {
 				$suffix   = isset( $obj->extra['suffix'] ) ? $obj->extra['suffix'] : '';
-				$rtl_href = str_replace( "{$suffix}.css", "-rtl{$suffix}.css", $this->_css_href( $src, $ver, "$handle-rtl" ) );
+				$rtl_href = str_replace( "{$suffix}.css1", "-rtl{$suffix}.css1", $this->_css_href( $src, $ver, "$handle-rtl" ) );
 			} else {
 				$rtl_href = $this->_css_href( $obj->extra['rtl'], $ver, "$handle-rtl" );
 			}
 
 			$rtl_tag = sprintf(
-				"<link rel='%s' id='%s-rtl-css'%s href='%s'%s media='%s' />\n",
+				"<link rel='%s' id='%s-rtl-css1'%s href='%s'%s media='%s' />\n",
 				$rel,
 				$handle,
 				$title,
@@ -344,7 +344,7 @@ class WP_Styles extends WP_Dependencies {
 		}
 
 		printf(
-			"<style id='%s-inline-css'%s>\n%s\n</style>\n",
+			"<style id='%s-inline-css1'%s>\n%s\n</style>\n",
 			esc_attr( $handle ),
 			$this->type_attr,
 			$output

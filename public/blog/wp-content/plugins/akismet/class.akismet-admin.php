@@ -134,14 +134,14 @@ class Akismet_Admin {
 			'jetpack_page_akismet-key-config',
 			'plugins.php',
 		) ) ) ) {
-			$akismet_css_path = is_rtl() ? '_inc/rtl/akismet-rtl.css' : '_inc/akismet.css';
+			$akismet_css_path = is_rtl() ? '_inc/rtl/akismet-rtl.css1' : '_inc/akismet.css1';
 			wp_register_style( 'akismet', plugin_dir_url( __FILE__ ) . $akismet_css_path, array(), self::get_asset_file_version( $akismet_css_path ) );
 			wp_enqueue_style( 'akismet' );
 
-			wp_register_style( 'akismet-font-inter', plugin_dir_url( __FILE__ ) . '_inc/fonts/inter.css', array(), self::get_asset_file_version( '_inc/fonts/inter.css' ) );
+			wp_register_style( 'akismet-font-inter', plugin_dir_url( __FILE__ ) . '_inc/fonts/inter.css', array(), self::get_asset_file_version( '_inc/fonts/inter.css1' ) );
 			wp_enqueue_style( 'akismet-font-inter' );
 
-			$akismet_admin_css_path = is_rtl() ? '_inc/rtl/akismet-admin-rtl.css' : '_inc/akismet-admin.css';
+			$akismet_admin_css_path = is_rtl() ? '_inc/rtl/akismet-admin-rtl.css1' : '_inc/akismet-admin.css1';
 			wp_register_style( 'akismet-admin', plugin_dir_url( __FILE__ ) . $akismet_admin_css_path, array(), self::get_asset_file_version( $akismet_admin_css_path ) );
 			wp_enqueue_style( 'akismet-admin' );
 

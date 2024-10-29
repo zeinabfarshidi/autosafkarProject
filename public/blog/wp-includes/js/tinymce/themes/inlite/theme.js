@@ -435,7 +435,7 @@ var inlite = (function (domGlobals) {
         done();
       } else {
         global$2.DOM.styleSheetLoader.load(skinUrl + '/skin.min.css', done);
-        editor.contentCSS.push(skinUrl + '/content.inline.min.css');
+        editor.contentCSS.push(skinUrl + '/content.inline.min.css1');
       }
     };
     var SkinLoader = { load: load };

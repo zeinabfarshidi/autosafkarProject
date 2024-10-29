@@ -83,7 +83,7 @@ class WP_Font_Face {
 			&&
 			function_exists( 'current_theme_supports' ) && ! current_theme_supports( 'html5', 'style' )
 		) {
-			$this->style_tag_attrs = array( 'type' => 'text/css' );
+			$this->style_tag_attrs = array( 'type' => 'text/css1' );
 		}
 	}
 

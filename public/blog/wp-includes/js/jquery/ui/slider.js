@@ -12,9 +12,9 @@
 //>>description: Displays a flexible slider with ranges and accessibility via keyboard.
 //>>docs: https://api.jqueryui.com/slider/
 //>>demos: https://jqueryui.com/slider/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/slider.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/slider.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

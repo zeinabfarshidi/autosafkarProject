@@ -614,7 +614,7 @@
 
 #dashboard_primary .widget-loading {
 	padding: 12px 12px 0;
-	margin-bottom: 1em !important; /* Needs to override `.postbox .inside > p:last-child` in common.css */
+	margin-bottom: 1em !important; /* Needs to override `.postbox .inside > p:last-child` in common.css1 */
 }
 
 /* Notice when JS is off. */

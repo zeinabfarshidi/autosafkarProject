@@ -53,8 +53,8 @@ function render_block_core_post_featured_image( $attributes, $content, $block ) 
 	if ( ! empty( $attributes['style']['shadow'] ) ) {
 		$shadow_styles = wp_style_engine_get_styles( array( 'shadow' => $attributes['style']['shadow'] ) );
 
-		if ( ! empty( $shadow_styles['css'] ) ) {
-			$extra_styles .= $shadow_styles['css'];
+		if ( ! empty( $shadow_styles['css1'] ) ) {
+			$extra_styles .= $shadow_styles['css1'];
 		}
 	}
 
@@ -246,8 +246,8 @@ function get_block_core_post_featured_image_border_attributes( $attributes ) {
 	if ( ! empty( $styles['classnames'] ) ) {
 		$attributes['class'] = $styles['classnames'];
 	}
-	if ( ! empty( $styles['css'] ) ) {
-		$attributes['style'] = $styles['css'];
+	if ( ! empty( $styles['css1'] ) ) {
+		$attributes['style'] = $styles['css1'];
 	}
 	return $attributes;
 }

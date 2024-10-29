@@ -197,7 +197,7 @@ function get_default_block_editor_settings() {
 
 	// These styles are used if the "no theme styles" options is triggered or on
 	// themes without their own editor styles.
-	$default_editor_styles_file = ABSPATH . WPINC . '/css/dist/block-editor/default-editor-styles.css';
+	$default_editor_styles_file = ABSPATH . WPINC . '/css1/dist/block-editor/default-editor-styles.css1';
 
 	static $default_editor_styles_file_contents = false;
 	if ( ! $default_editor_styles_file_contents && file_exists( $default_editor_styles_file ) ) {
@@ -207,7 +207,7 @@ function get_default_block_editor_settings() {
 	$default_editor_styles = array();
 	if ( $default_editor_styles_file_contents ) {
 		$default_editor_styles = array(
-			array( 'css' => $default_editor_styles_file_contents ),
+			array( 'css1' => $default_editor_styles_file_contents ),
 		);
 	}
 
@@ -497,33 +497,33 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 	$global_styles = array();
 	$presets       = array(
 		array(
-			'css'            => 'variables',
+			'css1'            => 'variables',
 			'__unstableType' => 'presets',
 			'isGlobalStyles' => true,
 		),
 		array(
-			'css'            => 'presets',
+			'css1'            => 'presets',
 			'__unstableType' => 'presets',
 			'isGlobalStyles' => true,
 		),
 	);
 	foreach ( $presets as $preset_style ) {
-		$actual_css = wp_get_global_stylesheet( array( $preset_style['css'] ) );
+		$actual_css = wp_get_global_stylesheet( array( $preset_style['css1'] ) );
 		if ( '' !== $actual_css ) {
-			$preset_style['css'] = $actual_css;
+			$preset_style['css1'] = $actual_css;
 			$global_styles[]     = $preset_style;
 		}
 	}
 
 	if ( wp_theme_has_theme_json() ) {
 		$block_classes = array(
-			'css'            => 'styles',
+			'css1'            => 'styles',
 			'__unstableType' => 'theme',
 			'isGlobalStyles' => true,
 		);
-		$actual_css    = wp_get_global_stylesheet( array( $block_classes['css'] ) );
+		$actual_css    = wp_get_global_stylesheet( array( $block_classes['css1'] ) );
 		if ( '' !== $actual_css ) {
-			$block_classes['css'] = $actual_css;
+			$block_classes['css1'] = $actual_css;
 			$global_styles[]      = $block_classes;
 		}
 
@@ -532,20 +532,20 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 		 * entered by users does not break other global styles.
 		 */
 		$global_styles[] = array(
-			'css'            => wp_get_global_styles_custom_css(),
+			'css1'            => wp_get_global_styles_custom_css(),
 			'__unstableType' => 'user',
 			'isGlobalStyles' => true,
 		);
 	} else {
 		// If there is no `theme.json` file, ensure base layout styles are still available.
 		$block_classes = array(
-			'css'            => 'base-layout-styles',
+			'css1'            => 'base-layout-styles',
 			'__unstableType' => 'base-layout',
 			'isGlobalStyles' => true,
 		);
-		$actual_css    = wp_get_global_stylesheet( array( $block_classes['css'] ) );
+		$actual_css    = wp_get_global_stylesheet( array( $block_classes['css1'] ) );
 		if ( '' !== $actual_css ) {
-			$block_classes['css'] = $actual_css;
+			$block_classes['css1'] = $actual_css;
 			$global_styles[]      = $block_classes;
 		}
 	}
@@ -788,7 +788,7 @@ function get_block_editor_theme_styles() {
 				$response = wp_remote_get( $style );
 				if ( ! is_wp_error( $response ) ) {
 					$styles[] = array(
-						'css'            => wp_remote_retrieve_body( $response ),
+						'css1'            => wp_remote_retrieve_body( $response ),
 						'__unstableType' => 'theme',
 						'isGlobalStyles' => false,
 					);
@@ -797,7 +797,7 @@ function get_block_editor_theme_styles() {
 				$file = get_theme_file_path( $style );
 				if ( is_file( $file ) ) {
 					$styles[] = array(
-						'css'            => file_get_contents( $file ),
+						'css1'            => file_get_contents( $file ),
 						'baseURL'        => get_theme_file_uri( $style ),
 						'__unstableType' => 'theme',
 						'isGlobalStyles' => false,

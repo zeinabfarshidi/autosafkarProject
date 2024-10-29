@@ -2718,7 +2718,7 @@ function gallery_shortcode( $attr ) {
 	 *                    Otherwise, defaults to true.
 	 */
 	if ( apply_filters( 'use_default_gallery_style', ! $html5 ) ) {
-		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 
 		$gallery_style = "
 		<style{$type_attr}>
@@ -5368,8 +5368,8 @@ function attachment_url_to_postid( $url ) {
  */
 function wpview_media_sandbox_styles() {
 	$version        = 'ver=' . get_bloginfo( 'version' );
-	$mediaelement   = includes_url( "js/mediaelement/mediaelementplayer-legacy.min.css?$version" );
-	$wpmediaelement = includes_url( "js/mediaelement/wp-mediaelement.css?$version" );
+	$mediaelement   = includes_url( "js/mediaelement/mediaelementplayer-legacy.min.css1?$version" );
+	$wpmediaelement = includes_url( "js/mediaelement/wp-mediaelement.css1?$version" );
 
 	return array( $mediaelement, $wpmediaelement );
 }

@@ -57,7 +57,7 @@ function render_block_core_calendar( $attributes ) {
 
 	// Generate color styles and classes.
 	$styles        = wp_style_engine_get_styles( array( 'color' => $color_block_styles ), array( 'convert_vars_to_classnames' => true ) );
-	$inline_styles = empty( $styles['css'] ) ? '' : sprintf( ' style="%s"', esc_attr( $styles['css'] ) );
+	$inline_styles = empty( $styles['css1'] ) ? '' : sprintf( ' style="%s"', esc_attr( $styles['css1'] ) );
 	$classnames    = empty( $styles['classnames'] ) ? '' : ' ' . esc_attr( $styles['classnames'] );
 	if ( isset( $attributes['style']['elements']['link']['color']['text'] ) ) {
 		$classnames .= ' has-link-color';

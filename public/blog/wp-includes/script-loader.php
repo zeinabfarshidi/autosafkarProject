@@ -1544,7 +1544,7 @@ function wp_default_styles( $styles ) {
 	$styles->content_url     = defined( 'WP_CONTENT_URL' ) ? WP_CONTENT_URL : '';
 	$styles->default_version = get_bloginfo( 'version' );
 	$styles->text_direction  = function_exists( 'is_rtl' ) && is_rtl() ? 'rtl' : 'ltr';
-	$styles->default_dirs    = array( '/wp-admin/', '/wp-includes/css/' );
+	$styles->default_dirs    = array( '/wp-admin/', '/wp-includes/css1/' );
 
 	// Open Sans is no longer used by core, but may be relied upon by themes and plugins.
 	$open_sans_font_url = '';
@@ -1571,7 +1571,7 @@ function wp_default_styles( $styles ) {
 		}
 
 		// Hotlink Open Sans, for now.
-		$open_sans_font_url = "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,400,600&subset=$subsets&display=fallback";
+		$open_sans_font_url = "https://fonts.googleapis.com/css1?family=Open+Sans:300italic,400italic,600italic,300,400,600&subset=$subsets&display=fallback";
 	}
 
 	// Register a stylesheet for the selected admin color scheme.
@@ -1580,58 +1580,58 @@ function wp_default_styles( $styles ) {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	// Admin CSS.
-	$styles->add( 'common', "/wp-admin/css/common$suffix.css" );
-	$styles->add( 'forms', "/wp-admin/css/forms$suffix.css" );
-	$styles->add( 'admin-menu', "/wp-admin/css/admin-menu$suffix.css" );
-	$styles->add( 'dashboard', "/wp-admin/css/dashboard$suffix.css" );
-	$styles->add( 'list-tables', "/wp-admin/css/list-tables$suffix.css" );
-	$styles->add( 'edit', "/wp-admin/css/edit$suffix.css" );
-	$styles->add( 'revisions', "/wp-admin/css/revisions$suffix.css" );
-	$styles->add( 'media', "/wp-admin/css/media$suffix.css" );
-	$styles->add( 'themes', "/wp-admin/css/themes$suffix.css" );
-	$styles->add( 'about', "/wp-admin/css/about$suffix.css" );
-	$styles->add( 'nav-menus', "/wp-admin/css/nav-menus$suffix.css" );
-	$styles->add( 'widgets', "/wp-admin/css/widgets$suffix.css", array( 'wp-pointer' ) );
-	$styles->add( 'site-icon', "/wp-admin/css/site-icon$suffix.css" );
-	$styles->add( 'l10n', "/wp-admin/css/l10n$suffix.css" );
-	$styles->add( 'code-editor', "/wp-admin/css/code-editor$suffix.css", array( 'wp-codemirror' ) );
-	$styles->add( 'site-health', "/wp-admin/css/site-health$suffix.css" );
+	$styles->add( 'common', "/wp-admin/css1/common$suffix.css1" );
+	$styles->add( 'forms', "/wp-admin/css1/forms$suffix.css1" );
+	$styles->add( 'admin-menu', "/wp-admin/css1/admin-menu$suffix.css1" );
+	$styles->add( 'dashboard', "/wp-admin/css1/dashboard$suffix.css1" );
+	$styles->add( 'list-tables', "/wp-admin/css1/list-tables$suffix.css1" );
+	$styles->add( 'edit', "/wp-admin/css1/edit$suffix.css1" );
+	$styles->add( 'revisions', "/wp-admin/css1/revisions$suffix.css1" );
+	$styles->add( 'media', "/wp-admin/css1/media$suffix.css1" );
+	$styles->add( 'themes', "/wp-admin/css1/themes$suffix.css1" );
+	$styles->add( 'about', "/wp-admin/css1/about$suffix.css1" );
+	$styles->add( 'nav-menus', "/wp-admin/css1/nav-menus$suffix.css1" );
+	$styles->add( 'widgets', "/wp-admin/css1/widgets$suffix.css1", array( 'wp-pointer' ) );
+	$styles->add( 'site-icon', "/wp-admin/css1/site-icon$suffix.css1" );
+	$styles->add( 'l10n', "/wp-admin/css1/l10n$suffix.css1" );
+	$styles->add( 'code-editor', "/wp-admin/css1/code-editor$suffix.css1", array( 'wp-codemirror' ) );
+	$styles->add( 'site-health', "/wp-admin/css1/site-health$suffix.css1" );
 
 	$styles->add( 'wp-admin', false, array( 'dashicons', 'common', 'forms', 'admin-menu', 'dashboard', 'list-tables', 'edit', 'revisions', 'media', 'themes', 'about', 'nav-menus', 'widgets', 'site-icon', 'l10n' ) );
 
-	$styles->add( 'login', "/wp-admin/css/login$suffix.css", array( 'dashicons', 'buttons', 'forms', 'l10n' ) );
-	$styles->add( 'install', "/wp-admin/css/install$suffix.css", array( 'dashicons', 'buttons', 'forms', 'l10n' ) );
-	$styles->add( 'wp-color-picker', "/wp-admin/css/color-picker$suffix.css" );
-	$styles->add( 'customize-controls', "/wp-admin/css/customize-controls$suffix.css", array( 'wp-admin', 'colors', 'imgareaselect' ) );
-	$styles->add( 'customize-widgets', "/wp-admin/css/customize-widgets$suffix.css", array( 'wp-admin', 'colors' ) );
-	$styles->add( 'customize-nav-menus', "/wp-admin/css/customize-nav-menus$suffix.css", array( 'wp-admin', 'colors' ) );
+	$styles->add( 'login', "/wp-admin/css1/login$suffix.css1", array( 'dashicons', 'buttons', 'forms', 'l10n' ) );
+	$styles->add( 'install', "/wp-admin/css1/install$suffix.css1", array( 'dashicons', 'buttons', 'forms', 'l10n' ) );
+	$styles->add( 'wp-color-picker', "/wp-admin/css1/color-picker$suffix.css1" );
+	$styles->add( 'customize-controls', "/wp-admin/css1/customize-controls$suffix.css1", array( 'wp-admin', 'colors', 'imgareaselect' ) );
+	$styles->add( 'customize-widgets', "/wp-admin/css1/customize-widgets$suffix.css1", array( 'wp-admin', 'colors' ) );
+	$styles->add( 'customize-nav-menus', "/wp-admin/css1/customize-nav-menus$suffix.css1", array( 'wp-admin', 'colors' ) );
 
 	// Common dependencies.
-	$styles->add( 'buttons', "/wp-includes/css/buttons$suffix.css" );
-	$styles->add( 'dashicons', "/wp-includes/css/dashicons$suffix.css" );
+	$styles->add( 'buttons', "/wp-includes/css1/buttons$suffix.css1" );
+	$styles->add( 'dashicons', "/wp-includes/css1/dashicons$suffix.css1" );
 
 	// Includes CSS.
-	$styles->add( 'admin-bar', "/wp-includes/css/admin-bar$suffix.css", array( 'dashicons' ) );
-	$styles->add( 'wp-auth-check', "/wp-includes/css/wp-auth-check$suffix.css", array( 'dashicons' ) );
-	$styles->add( 'editor-buttons', "/wp-includes/css/editor$suffix.css", array( 'dashicons' ) );
-	$styles->add( 'media-views', "/wp-includes/css/media-views$suffix.css", array( 'buttons', 'dashicons', 'wp-mediaelement' ) );
-	$styles->add( 'wp-pointer', "/wp-includes/css/wp-pointer$suffix.css", array( 'dashicons' ) );
-	$styles->add( 'customize-preview', "/wp-includes/css/customize-preview$suffix.css", array( 'dashicons' ) );
-	$styles->add( 'wp-embed-template-ie', "/wp-includes/css/wp-embed-template-ie$suffix.css" );
+	$styles->add( 'admin-bar', "/wp-includes/css1/admin-bar$suffix.css1", array( 'dashicons' ) );
+	$styles->add( 'wp-auth-check', "/wp-includes/css1/wp-auth-check$suffix.css1", array( 'dashicons' ) );
+	$styles->add( 'editor-buttons', "/wp-includes/css1/editor$suffix.css1", array( 'dashicons' ) );
+	$styles->add( 'media-views', "/wp-includes/css1/media-views$suffix.css1", array( 'buttons', 'dashicons', 'wp-mediaelement' ) );
+	$styles->add( 'wp-pointer', "/wp-includes/css1/wp-pointer$suffix.css1", array( 'dashicons' ) );
+	$styles->add( 'customize-preview', "/wp-includes/css1/customize-preview$suffix.css1", array( 'dashicons' ) );
+	$styles->add( 'wp-embed-template-ie', "/wp-includes/css1/wp-embed-template-ie$suffix.css1" );
 	$styles->add_data( 'wp-embed-template-ie', 'conditional', 'lte IE 8' );
 
 	// External libraries and friends.
-	$styles->add( 'imgareaselect', '/wp-includes/js/imgareaselect/imgareaselect.css', array(), '0.9.8' );
-	$styles->add( 'wp-jquery-ui-dialog', "/wp-includes/css/jquery-ui-dialog$suffix.css", array( 'dashicons' ) );
-	$styles->add( 'mediaelement', '/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css', array(), '4.2.17' );
-	$styles->add( 'wp-mediaelement', "/wp-includes/js/mediaelement/wp-mediaelement$suffix.css", array( 'mediaelement' ) );
-	$styles->add( 'thickbox', '/wp-includes/js/thickbox/thickbox.css', array( 'dashicons' ) );
-	$styles->add( 'wp-codemirror', '/wp-includes/js/codemirror/codemirror.min.css', array(), '5.29.1-alpha-ee20357' );
+	$styles->add( 'imgareaselect', '/wp-includes/js/imgareaselect/imgareaselect.css1', array(), '0.9.8' );
+	$styles->add( 'wp-jquery-ui-dialog', "/wp-includes/css1/jquery-ui-dialog$suffix.css1", array( 'dashicons' ) );
+	$styles->add( 'mediaelement', '/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css1', array(), '4.2.17' );
+	$styles->add( 'wp-mediaelement', "/wp-includes/js/mediaelement/wp-mediaelement$suffix.css1", array( 'mediaelement' ) );
+	$styles->add( 'thickbox', '/wp-includes/js/thickbox/thickbox.css1', array( 'dashicons' ) );
+	$styles->add( 'wp-codemirror', '/wp-includes/js/codemirror/codemirror.min.css1', array(), '5.29.1-alpha-ee20357' );
 
 	// Deprecated CSS.
-	$styles->add( 'deprecated-media', "/wp-admin/css/deprecated-media$suffix.css" );
-	$styles->add( 'farbtastic', "/wp-admin/css/farbtastic$suffix.css", array(), '1.3u1' );
-	$styles->add( 'jcrop', '/wp-includes/js/jcrop/jquery.Jcrop.min.css', array(), '0.9.15' );
+	$styles->add( 'deprecated-media', "/wp-admin/css1/deprecated-media$suffix.css1" );
+	$styles->add( 'farbtastic', "/wp-admin/css1/farbtastic$suffix.css1", array(), '1.3u1' );
+	$styles->add( 'jcrop', '/wp-includes/js/jcrop/jquery.Jcrop.min.css1', array(), '0.9.15' );
 	$styles->add( 'colors-fresh', false, array( 'wp-admin', 'buttons' ) ); // Old handle.
 	$styles->add( 'open-sans', $open_sans_font_url ); // No longer used in core as of 4.6.
 
@@ -1645,28 +1645,28 @@ function wp_default_styles( $styles ) {
 	 */
 	$font_family = _x( 'Noto Serif:400,400i,700,700i', 'Google Font Name and Variants' );
 	if ( 'off' !== $font_family ) {
-		$fonts_url = 'https://fonts.googleapis.com/css?family=' . urlencode( $font_family );
+		$fonts_url = 'https://fonts.googleapis.com/css1?family=' . urlencode( $font_family );
 	}
 	$styles->add( 'wp-editor-font', $fonts_url ); // No longer used in core as of 5.7.
-	$block_library_theme_path = WPINC . "/css/dist/block-library/theme$suffix.css";
+	$block_library_theme_path = WPINC . "/css1/dist/block-library/theme$suffix.css1";
 	$styles->add( 'wp-block-library-theme', "/$block_library_theme_path" );
 	$styles->add_data( 'wp-block-library-theme', 'path', ABSPATH . $block_library_theme_path );
 
 	$styles->add(
 		'wp-reset-editor-styles',
-		"/wp-includes/css/dist/block-library/reset$suffix.css",
+		"/wp-includes/css1/dist/block-library/reset$suffix.css1",
 		array( 'common', 'forms' ) // Make sure the reset is loaded after the default WP Admin styles.
 	);
 
 	$styles->add(
 		'wp-editor-classic-layout-styles',
-		"/wp-includes/css/dist/edit-post/classic$suffix.css",
+		"/wp-includes/css1/dist/edit-post/classic$suffix.css1",
 		array()
 	);
 
 	$styles->add(
 		'wp-block-editor-content',
-		"/wp-includes/css/dist/block-editor/content$suffix.css",
+		"/wp-includes/css1/dist/block-editor/content$suffix.css1",
 		array( 'wp-components' )
 	);
 
@@ -1702,7 +1702,7 @@ function wp_default_styles( $styles ) {
 
 	$styles->add(
 		'wp-edit-blocks',
-		"/wp-includes/css/dist/block-library/editor$suffix.css",
+		"/wp-includes/css1/dist/block-library/editor$suffix.css1",
 		$wp_edit_blocks_dependencies
 	);
 
@@ -1766,10 +1766,10 @@ function wp_default_styles( $styles ) {
 
 	foreach ( $package_styles as $package => $dependencies ) {
 		$handle = 'wp-' . $package;
-		$path   = "/wp-includes/css/dist/$package/style$suffix.css";
+		$path   = "/wp-includes/css1/dist/$package/style$suffix.css1";
 
 		if ( 'block-library' === $package && wp_should_load_separate_core_block_assets() ) {
-			$path = "/wp-includes/css/dist/$package/common$suffix.css";
+			$path = "/wp-includes/css1/dist/$package/common$suffix.css1";
 		}
 		$styles->add( $handle, $path, $dependencies );
 		$styles->add_data( $handle, 'path', ABSPATH . $path );
@@ -2351,7 +2351,7 @@ function _print_styles() {
 	}
 
 	$concat    = trim( $wp_styles->concat, ', ' );
-	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+	$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 
 	if ( $concat ) {
 		$dir = $wp_styles->text_direction;
@@ -2512,12 +2512,12 @@ function wp_enqueue_global_styles() {
 	wp_add_inline_style( 'global-styles', $stylesheet );
 	wp_enqueue_style( 'global-styles' );
 
-	// Add each block as an inline css.
+	// Add each block as an inline css1.
 	wp_add_global_styles_for_blocks();
 }
 
 /**
- * Enqueues the global styles custom css defined via theme.json.
+ * Enqueues the global styles custom css1 defined via theme.json.
  *
  * @since 6.2.0
  */
@@ -2572,7 +2572,7 @@ function wp_should_load_block_editor_scripts_and_styles() {
  *
  * When this function returns false, all core block assets are loaded regardless
  * of whether they are rendered in a page or not, because they are all part of
- * the `block-library/style.css` file. Assets for third-party blocks are always
+ * the `block-library/style.css1` file. Assets for third-party blocks are always
  * enqueued regardless of whether they are rendered or not.
  *
  * This only affects front end and not the block editor screens.
@@ -3010,20 +3010,20 @@ function wp_maybe_inline_styles() {
 			}
 
 			// Get the styles if we don't already have them.
-			$style['css'] = file_get_contents( $style['path'] );
+			$style['css1'] = file_get_contents( $style['path'] );
 
 			/*
 			 * Check if the style contains relative URLs that need to be modified.
 			 * URLs relative to the stylesheet's path should be converted to relative to the site's root.
 			 */
-			$style['css'] = _wp_normalize_relative_css_links( $style['css'], $style['src'] );
+			$style['css1'] = _wp_normalize_relative_css_links( $style['css1'], $style['src'] );
 
 			// Set `src` to `false` and add styles inline.
 			$wp_styles->registered[ $style['handle'] ]->src = false;
 			if ( empty( $wp_styles->registered[ $style['handle'] ]->extra['after'] ) ) {
 				$wp_styles->registered[ $style['handle'] ]->extra['after'] = array();
 			}
-			array_unshift( $wp_styles->registered[ $style['handle'] ]->extra['after'], $style['css'] );
+			array_unshift( $wp_styles->registered[ $style['handle'] ]->extra['after'], $style['css1'] );
 
 			// Add the styles size to the $total_inline_size var.
 			$total_inline_size += (int) $style['size'];
@@ -3078,9 +3078,9 @@ function _wp_normalize_relative_css_links( $css, $stylesheet_url ) {
  * @since 5.9.0
  */
 function wp_enqueue_global_styles_css_custom_properties() {
-	wp_register_style( 'global-styles-css-custom-properties', false );
-	wp_add_inline_style( 'global-styles-css-custom-properties', wp_get_global_stylesheet( array( 'variables' ) ) );
-	wp_enqueue_style( 'global-styles-css-custom-properties' );
+	wp_register_style( 'global-styles-css1-custom-properties', false );
+	wp_add_inline_style( 'global-styles-css1-custom-properties', wp_get_global_stylesheet( array( 'variables' ) ) );
+	wp_enqueue_style( 'global-styles-css1-custom-properties' );
 }
 
 /**
@@ -3233,7 +3233,7 @@ function wp_enqueue_block_style( $block_name, $args ) {
 			wp_style_add_data( $args['handle'], 'path', $args['path'] );
 
 			// Get the RTL file path.
-			$rtl_file_path = str_replace( '.css', '-rtl.css', $args['path'] );
+			$rtl_file_path = str_replace( '.css1', '-rtl.css1', $args['path'] );
 
 			// Add RTL stylesheet.
 			if ( file_exists( $rtl_file_path ) ) {
@@ -3305,8 +3305,8 @@ function wp_enqueue_block_style( $block_name, $args ) {
 function wp_enqueue_classic_theme_styles() {
 	if ( ! wp_theme_has_theme_json() ) {
 		$suffix = wp_scripts_get_suffix();
-		wp_register_style( 'classic-theme-styles', '/' . WPINC . "/css/classic-themes$suffix.css" );
-		wp_style_add_data( 'classic-theme-styles', 'path', ABSPATH . WPINC . "/css/classic-themes$suffix.css" );
+		wp_register_style( 'classic-theme-styles', '/' . WPINC . "/css1/classic-themes$suffix.css1" );
+		wp_style_add_data( 'classic-theme-styles', 'path', ABSPATH . WPINC . "/css1/classic-themes$suffix.css1" );
 		wp_enqueue_style( 'classic-theme-styles' );
 	}
 }
@@ -3327,7 +3327,7 @@ function wp_add_editor_classic_theme_styles( $editor_settings ) {
 	}
 
 	$suffix               = wp_scripts_get_suffix();
-	$classic_theme_styles = ABSPATH . WPINC . "/css/classic-themes$suffix.css";
+	$classic_theme_styles = ABSPATH . WPINC . "/css1/classic-themes$suffix.css1";
 
 	/*
 	 * This follows the pattern of get_block_editor_theme_styles,
@@ -3335,7 +3335,7 @@ function wp_add_editor_classic_theme_styles( $editor_settings ) {
 	 * only handles external files or theme files.
 	 */
 	$classic_theme_styles_settings = array(
-		'css'            => file_get_contents( $classic_theme_styles ),
+		'css1'            => file_get_contents( $classic_theme_styles ),
 		'__unstableType' => 'core',
 		'isGlobalStyles' => false,
 	);

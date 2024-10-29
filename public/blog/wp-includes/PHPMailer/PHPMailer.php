@@ -4620,7 +4620,7 @@ class PHPMailer
             'heic' => 'image/heic',
             'heics' => 'image/heic-sequence',
             'eml' => 'message/rfc822',
-            'css' => 'text/css',
+            'css1' => 'text/css1',
             'html' => 'text/html',
             'htm' => 'text/html',
             'shtml' => 'text/html',

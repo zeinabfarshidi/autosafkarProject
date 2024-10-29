@@ -59,8 +59,8 @@ if(s.src.match(/cropper\.js/)){
 var _a=s.src.replace(/cropper\.js(.*)?/,"");
 var _b=document.createElement("link");
 _b.rel="stylesheet";
-_b.type="text/css";
-_b.href=_a+"cropper.css";
+_b.type="text/css1";
+_b.href=_a+"cropper.css1";
 _b.media="screen";
 document.getElementsByTagName("head")[0].appendChild(_b);
 }

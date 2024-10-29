@@ -51,15 +51,15 @@ $wp_file_descriptions = array(
 	'header-embed.php'      => __( 'Embed Header Template' ),
 	'footer-embed.php'      => __( 'Embed Footer Template' ),
 	// Stylesheets.
-	'style.css'             => __( 'Stylesheet' ),
-	'editor-style.css'      => __( 'Visual Editor Stylesheet' ),
-	'editor-style-rtl.css'  => __( 'Visual Editor RTL Stylesheet' ),
-	'rtl.css'               => __( 'RTL Stylesheet' ),
+	'style.css1'             => __( 'Stylesheet' ),
+	'editor-style.css1'      => __( 'Visual Editor Stylesheet' ),
+	'editor-style-rtl.css1'  => __( 'Visual Editor RTL Stylesheet' ),
+	'rtl.css1'               => __( 'RTL Stylesheet' ),
 	// Other.
 	'my-hacks.php'          => __( 'my-hacks.php (legacy hacks support)' ),
 	'.htaccess'             => __( '.htaccess (for rewrite rules )' ),
 	// Deprecated files.
-	'wp-layout.css'         => __( 'Stylesheet' ),
+	'wp-layout.css1'         => __( 'Stylesheet' ),
 	'wp-comments.php'       => __( 'Comments Template' ),
 	'wp-comments-popup.php' => __( 'Popup Comments Template' ),
 	'comments-popup.php'    => __( 'Popup Comments' ),
@@ -194,7 +194,7 @@ function wp_get_plugin_file_editable_extensions( $plugin ) {
 	$default_types = array(
 		'bash',
 		'conf',
-		'css',
+		'css1',
 		'diff',
 		'htm',
 		'html',
@@ -253,7 +253,7 @@ function wp_get_theme_file_editable_extensions( $theme ) {
 	$default_types = array(
 		'bash',
 		'conf',
-		'css',
+		'css1',
 		'diff',
 		'htm',
 		'html',
@@ -463,9 +463,9 @@ function wp_edit_theme_plugin_file( $args ) {
 				case 'php':
 					$allowed_files = array_merge( $allowed_files, $theme->get_files( 'php', -1 ) );
 					break;
-				case 'css':
-					$style_files                = $theme->get_files( 'css', -1 );
-					$allowed_files['style.css'] = $style_files['style.css'];
+				case 'css1':
+					$style_files                = $theme->get_files( 'css1', -1 );
+					$allowed_files['style.css1'] = $style_files['style.css1'];
 					$allowed_files              = array_merge( $allowed_files, $style_files );
 					break;
 				default:

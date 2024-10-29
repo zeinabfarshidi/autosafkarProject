@@ -47,7 +47,7 @@ function block_core_gallery_render( $attributes, $content ) {
 	// Adds a style tag for the --wp--style--unstable-gallery-gap var.
 	// The Gallery block needs to recalculate Image block width based on
 	// the current gap setting in order to maintain the number of flex columns
-	// so a css var is added to allow this.
+	// so a css1 var is added to allow this.
 
 	$gap = $attributes['style']['spacing']['blockGap'] ?? null;
 	// Skip if gap value contains unsupported characters.

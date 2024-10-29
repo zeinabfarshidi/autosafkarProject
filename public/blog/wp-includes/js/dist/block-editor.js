@@ -156,7 +156,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 			// Using offsetHeight as a replacement for computed.height in IE, because IE does not account use of border-box
 			var actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(computed.height)) : ta.offsetHeight;
 
-			// The actual height not matching the style height (set via the resize method) indicates that 
+			// The actual height not matching the style height (set via the resize method) indicates that
 			// the max-height has been exceeded, in which case the overflow should be allowed.
 			if (actualHeight < styleHeight) {
 				if (computed.overflowY === 'hidden') {
@@ -3023,7 +3023,7 @@ class CssSyntaxError extends Error {
 
   setMessage() {
     this.message = this.plugin ? this.plugin + ': ' : ''
-    this.message += this.file ? this.file : '<css input>'
+    this.message += this.file ? this.file : '<css1 input>'
     if (typeof this.line !== 'undefined') {
       this.message += ':' + this.line + ':' + this.column
     }
@@ -3281,7 +3281,7 @@ class Input {
     }
 
     if (!this.file) {
-      this.id = '<input css ' + nanoid(6) + '>'
+      this.id = '<input css1 ' + nanoid(6) + '>'
     }
     if (this.map) this.map.file = this.from
   }
@@ -3653,7 +3653,7 @@ class LazyResult {
   }
 
   getAsyncError() {
-    throw new Error('Use process(css).then(cb) to work with async plugins')
+    throw new Error('Use process(css1).then(cb) to work with async plugins')
   }
 
   handleError(error, node) {
@@ -4327,7 +4327,7 @@ class MapGenerator {
     } else if (this.opts.from) {
       return this.path(this.opts.from)
     } else {
-      return 'to.css'
+      return 'to.css1'
     }
   }
 
@@ -7660,7 +7660,7 @@ module.exports = { nanoid, customAlphabet }
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -7674,14 +7674,14 @@ module.exports = { nanoid, customAlphabet }
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -7694,7 +7694,7 @@ module.exports = { nanoid, customAlphabet }
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -7706,12 +7706,12 @@ module.exports = { nanoid, customAlphabet }
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -7722,7 +7722,7 @@ module.exports = { nanoid, customAlphabet }
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -16507,7 +16507,7 @@ function roundToPrecision(value, digits = 3) {
 
 /**
  * Returns a font-size value based on a given font-size preset.
- * Takes into account fluid typography parameters and attempts to return a css formula depending on available, valid values.
+ * Takes into account fluid typography parameters and attempts to return a css1 formula depending on available, valid values.
  *
  * @param {Preset}                     preset
  * @param {Object}                     settings
@@ -18218,8 +18218,8 @@ function getBlockGapCSS(selector, layoutDefinitions = LAYOUT_DEFINITIONS, layout
  *
  * Besides checking if `contentSize` and `wideSize` have a
  * value, we now show this information only if their values
- * are not a `css var`. This needs to change when parsing
- * css variables land.
+ * are not a `css1 var`. This needs to change when parsing
+ * css1 variables land.
  *
  * @see https://github.com/WordPress/gutenberg/pull/34710#issuecomment-918000752
  *
@@ -32667,7 +32667,7 @@ function getDuotoneFilter(id, colors) {
 </svg>`;
 }
 
-;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/get-block-css-selector.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/get-block-css1-selector.js
 /**
  * Internal dependencies
  */
@@ -43711,7 +43711,7 @@ function getCompatibilityStyles() {
     // Don't try to add the reset styles, which were removed as a dependency
     // from `edit-blocks` for the iframe since we don't need to reset admin
     // styles.
-    if (ownerNode.id === 'wp-reset-editor-styles-css') {
+    if (ownerNode.id === 'wp-reset-editor-styles-css1') {
       return accumulator;
     }
 
@@ -43739,7 +43739,7 @@ function getCompatibilityStyles() {
         // If the current target is inline,
         // it could be a dependency of an existing stylesheet.
         // Look for that dependency and add it BEFORE the current target.
-        const mainStylesCssId = ownerNode.id.replace('-inline-css', '-css');
+        const mainStylesCssId = ownerNode.id.replace('-inline-css', '-css1');
         const mainStylesElement = document.getElementById(mainStylesCssId);
         if (mainStylesElement) {
           accumulator.push(mainStylesElement.cloneNode(true));
@@ -43750,7 +43750,7 @@ function getCompatibilityStyles() {
         // If the current target is not inline,
         // we still look for inline styles that could be relevant for the current target.
         // If they exist, add them AFTER the current target.
-        const inlineStylesCssId = ownerNode.id.replace('-css', '-inline-css');
+        const inlineStylesCssId = ownerNode.id.replace('-css', '-inline-css1');
         const inlineStylesElement = document.getElementById(inlineStylesCssId);
         if (inlineStylesElement) {
           accumulator.push(inlineStylesElement.cloneNode(true));
@@ -62309,7 +62309,7 @@ var Cropper = /** @class */function (_super) {
     this.currentDoc.addEventListener('scroll', this.onScroll);
     if (!this.props.disableAutomaticStylesInjection) {
       this.styleRef = this.currentDoc.createElement('style');
-      this.styleRef.setAttribute('type', 'text/css');
+      this.styleRef.setAttribute('type', 'text/css1');
       if (this.props.nonce) {
         this.styleRef.setAttribute('nonce', this.props.nonce);
       }
@@ -67945,7 +67945,7 @@ const __experimentalGetElementClassName = element => {
   return elements_ELEMENT_CLASS_NAMES[element] ? elements_ELEMENT_CLASS_NAMES[element] : '';
 };
 
-;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/get-px-from-css-unit.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/get-px-from-css1-unit.js
 /**
  * This function was accidentially exposed for mobile/native usage.
  *
@@ -68090,7 +68090,7 @@ function AdvancedPanel({
       value: customCSS,
       onChange: newValue => handleOnChange(newValue),
       onBlur: handleOnBlur,
-      className: "block-editor-global-styles-advanced-panel__custom-css-input",
+      className: "block-editor-global-styles-advanced-panel__custom-css1-input",
       spellCheck: false
     })]
   });
@@ -68829,7 +68829,7 @@ var isPropValid = /* #__PURE__ */memoize(function (prop) {
 
 Based off glamor's StyleSheet, thanks Sunil ❤️
 
-high performance StyleSheet for css-in-js systems
+high performance StyleSheet for css1-in-js systems
 
 - uses multiple style tags behind the scenes for millions of rules
 - uses `insertRule` for appending in production for *much* faster performance
@@ -68841,7 +68841,7 @@ import { StyleSheet } from '@emotion/sheet'
 let styleSheet = new StyleSheet({ key: '', container: document.head })
 
 styleSheet.insert('#box { border: 1px solid red; }')
-- appends a css rule into the stylesheet
+- appends a css1 rule into the stylesheet
 
 styleSheet.flush()
 - empties the stylesheet of all its contents
@@ -68938,7 +68938,7 @@ var StyleSheet = /*#__PURE__*/function () {
 
       try {
         // this is the ultrafast version, works across browsers
-        // the big drawback is that the css won't be editable in devtools
+        // the big drawback is that the css1 won't be editable in devtools
         sheet.insertRule(rule, sheet.cssRules.length);
       } catch (e) {
         if (false) {}
@@ -70489,7 +70489,7 @@ function handleInterpolation(mergedProps, registered, interpolation) {
       if (false) { var replaced, matched; }
 
       break;
-  } // finalize string values (regular strings and functions interpolated into css calls)
+  } // finalize string values (regular strings and functions interpolated into css1 calls)
 
 
   if (registered == null) {
@@ -70801,7 +70801,7 @@ var Insertion = function Insertion(_ref) {
 };
 
 var Emotion = /* #__PURE__ */(/* unused pure expression or super */ null && (withEmotionCache(function (props, cache, ref) {
-  var cssProp = props.css; // so that using `css` from `emotion` and passing the result to the css prop works
+  var cssProp = props.css; // so that using `css1` from `emotion` and passing the result to the css1 prop works
   // not passing the registered cache to serializeStyles because it would
   // make certain babel optimisations not possible
 
@@ -71062,7 +71062,7 @@ var createStyled = function createStyled(tag, options) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/dimensions-tool/width-height-tool.js
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */

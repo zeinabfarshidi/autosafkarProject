@@ -3305,7 +3305,7 @@ function make_site_theme_from_oldschool( $theme_name, $template ) {
 	 */
 	$files = array(
 		'index.php'             => 'index.php',
-		'wp-layout.css'         => 'style.css',
+		'wp-layout.css1'         => 'style.css1',
 		'wp-comments.php'       => 'comments.php',
 		'wp-comments-popup.php' => 'comments-popup.php',
 	);
@@ -3348,7 +3348,7 @@ function make_site_theme_from_oldschool( $theme_name, $template ) {
 
 				// Update stylesheet references.
 				$line = str_replace(
-					"<?php echo __get_option('siteurl'); ?>/wp-layout.css",
+					"<?php echo __get_option('siteurl'); ?>/wp-layout.css1",
 					"<?php bloginfo('stylesheet_url'); ?>",
 					$line
 				);
@@ -3375,9 +3375,9 @@ function make_site_theme_from_oldschool( $theme_name, $template ) {
 		"Author: Moi\n" .
 		"*/\n";
 
-	$stylelines = file_get_contents( "$site_dir/style.css" );
+	$stylelines = file_get_contents( "$site_dir/style.css1" );
 	if ( $stylelines ) {
-		$f = fopen( "$site_dir/style.css", 'w' );
+		$f = fopen( "$site_dir/style.css1", 'w' );
 
 		fwrite( $f, $header );
 		fwrite( $f, $stylelines );
@@ -3404,7 +3404,7 @@ function make_site_theme_from_default( $theme_name, $template ) {
 
 	/*
 	 * Copy files from the default theme to the site theme.
-	 * $files = array( 'index.php', 'comments.php', 'comments-popup.php', 'footer.php', 'header.php', 'sidebar.php', 'style.css' );
+	 * $files = array( 'index.php', 'comments.php', 'comments-popup.php', 'footer.php', 'header.php', 'sidebar.php', 'style.css1' );
 	 */
 
 	$theme_dir = @opendir( $default_dir );
@@ -3425,9 +3425,9 @@ function make_site_theme_from_default( $theme_name, $template ) {
 	}
 
 	// Rewrite the theme header.
-	$stylelines = explode( "\n", implode( '', file( "$site_dir/style.css" ) ) );
+	$stylelines = explode( "\n", implode( '', file( "$site_dir/style.css1" ) ) );
 	if ( $stylelines ) {
-		$f = fopen( "$site_dir/style.css", 'w' );
+		$f = fopen( "$site_dir/style.css1", 'w' );
 
 		$headers = array(
 			'Theme Name:'  => $theme_name,
@@ -3505,7 +3505,7 @@ function make_site_theme() {
 		return false;
 	}
 
-	if ( file_exists( ABSPATH . 'wp-layout.css' ) ) {
+	if ( file_exists( ABSPATH . 'wp-layout.css1' ) ) {
 		if ( ! make_site_theme_from_oldschool( $theme_name, $template ) ) {
 			// TODO: rm -rf the site theme directory.
 			return false;

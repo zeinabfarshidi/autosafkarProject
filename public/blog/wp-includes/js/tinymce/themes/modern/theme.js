@@ -3887,8 +3887,8 @@ var modern = (function (domGlobals) {
     var renderUI = function (editor, theme, args) {
       var skinUrl = getSkinUrl(editor);
       if (skinUrl) {
-        args.skinUiCss = skinUrl + '/skin.min.css';
-        editor.contentCSS.push(skinUrl + '/content' + (editor.inline ? '.inline' : '') + '.min.css');
+        args.skinUiCss = skinUrl + '/skin.min.css1';
+        editor.contentCSS.push(skinUrl + '/content' + (editor.inline ? '.inline' : '') + '.min.css1');
       }
       ProgressState.setup(editor, theme);
       return isInline(editor) ? Inline.render(editor, theme, args) : Iframe.render(editor, theme, args);

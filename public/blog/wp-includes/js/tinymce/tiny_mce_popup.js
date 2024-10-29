@@ -44,7 +44,7 @@ var tinyMCEPopup = {
       if (settings.popup_css) {
         settings.popup_css = self.editor.documentBaseURI.toAbsolute(settings.popup_css);
       } else {
-        settings.popup_css = self.editor.baseURI.toAbsolute("plugins/compat3x/css/dialog.css");
+        settings.popup_css = self.editor.baseURI.toAbsolute("plugins/compat3x/css1/dialog.css1");
       }
     }
 
@@ -60,7 +60,7 @@ var tinyMCEPopup = {
 
     self.dom.bind(window, 'ready', self._onDOMLoaded, self);
 
-    // Enables you to skip loading the default css
+    // Enables you to skip loading the default css1
     if (self.features.popup_css !== false) {
       self.dom.loadCSS(self.features.popup_css || self.editor.settings.popup_css);
     }

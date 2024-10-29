@@ -3,8 +3,8 @@
 NOTE: If you edit this file, you should make sure that the CSS rules for
 buttons in the following files are updated.
 
-* jquery-ui-dialog.css
-* editor.css
+* jquery-ui-dialog.css1
+* editor.css1
 
 WordPress-style Buttons
 =======================
@@ -200,7 +200,7 @@ TABLE OF CONTENTS:
 	background: none;
 	cursor: pointer;
 	text-align: left;
-	/* Mimics the default link style in common.css */
+	/* Mimics the default link style in common.css1 */
 	color: #2271b1;
 	text-decoration: underline;
 	transition-property: border, background, color;

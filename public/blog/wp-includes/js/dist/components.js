@@ -662,13 +662,13 @@ module.exports =
 /***/ (function(module, exports, __nested_webpack_require_1587__) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
+
 	var _utils = __nested_webpack_require_1587__(2);
-	
+
 	Object.defineProperty(exports, 'combineChunks', {
 	  enumerable: true,
 	  get: function get() {
@@ -699,12 +699,12 @@ module.exports =
 /***/ (function(module, exports) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
-	
+
+
 	/**
 	 * Creates an array of chunk objects representing both higlightable and non highlightable pieces of text that match each search word.
 	 * @return Array of "chunks" (where a Chunk is { start:number, end:number, highlight:boolean })
@@ -731,16 +731,16 @@ module.exports =
 	    totalLength: textToHighlight ? textToHighlight.length : 0
 	  });
 	};
-	
+
 	/**
 	 * Takes an array of {start:number, end:number} objects and combines chunks that overlap into single chunks.
 	 * @return {start:number, end:number}[]
 	 */
-	
-	
+
+
 	var combineChunks = exports.combineChunks = function combineChunks(_ref2) {
 	  var chunks = _ref2.chunks;
-	
+
 	  chunks = chunks.sort(function (first, second) {
 	    return first.start - second.start;
 	  }).reduce(function (processedChunks, nextChunk) {
@@ -761,10 +761,10 @@ module.exports =
 	      return processedChunks;
 	    }
 	  }, []);
-	
+
 	  return chunks;
 	};
-	
+
 	/**
 	 * Examine text for any matches.
 	 * If we find matches, add them to the returned array as a "chunk" object ({start:number, end:number}).
@@ -777,21 +777,21 @@ module.exports =
 	      sanitize = _ref3$sanitize === undefined ? defaultSanitize : _ref3$sanitize,
 	      searchWords = _ref3.searchWords,
 	      textToHighlight = _ref3.textToHighlight;
-	
+
 	  textToHighlight = sanitize(textToHighlight);
-	
+
 	  return searchWords.filter(function (searchWord) {
 	    return searchWord;
 	  }) // Remove empty words
 	  .reduce(function (chunks, searchWord) {
 	    searchWord = sanitize(searchWord);
-	
+
 	    if (autoEscape) {
 	      searchWord = escapeRegExpFn(searchWord);
 	    }
-	
+
 	    var regex = new RegExp(searchWord, caseSensitive ? 'g' : 'gi');
-	
+
 	    var match = void 0;
 	    while (match = regex.exec(textToHighlight)) {
 	      var _start = match.index;
@@ -800,21 +800,21 @@ module.exports =
 	      if (_end > _start) {
 	        chunks.push({ highlight: false, start: _start, end: _end });
 	      }
-	
+
 	      // Prevent browsers like Firefox from getting stuck in an infinite loop
 	      // See http://www.regexguru.com/2008/04/watch-out-for-zero-length-matches/
 	      if (match.index === regex.lastIndex) {
 	        regex.lastIndex++;
 	      }
 	    }
-	
+
 	    return chunks;
 	  }, []);
 	};
 	// Allow the findChunks to be overridden in findAll,
 	// but for backwards compatibility we export as the old name
 	exports.findChunks = defaultFindChunks;
-	
+
 	/**
 	 * Given a set of chunks to highlight, create an additional set of chunks
 	 * to represent the bits of text between the highlighted text.
@@ -822,11 +822,11 @@ module.exports =
 	 * @param totalLength number
 	 * @return {start:number, end:number, highlight:boolean}[]
 	 */
-	
+
 	var fillInChunks = exports.fillInChunks = function fillInChunks(_ref4) {
 	  var chunksToHighlight = _ref4.chunksToHighlight,
 	      totalLength = _ref4.totalLength;
-	
+
 	  var allChunks = [];
 	  var append = function append(start, end, highlight) {
 	    if (end - start > 0) {
@@ -837,7 +837,7 @@ module.exports =
 	      });
 	    }
 	  };
-	
+
 	  if (chunksToHighlight.length === 0) {
 	    append(0, totalLength, false);
 	  } else {
@@ -851,11 +851,11 @@ module.exports =
 	  }
 	  return allChunks;
 	};
-	
+
 	function defaultSanitize(string) {
 	  return string;
 	}
-	
+
 	function escapeRegExpFn(string) {
 	  return string.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
 	}
@@ -1657,7 +1657,7 @@ module.exports = window["React"];
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -1671,14 +1671,14 @@ module.exports = window["React"];
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -1691,7 +1691,7 @@ module.exports = window["React"];
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/create fake namespace object */
 /******/ 	(() => {
 /******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
@@ -1721,7 +1721,7 @@ module.exports = window["React"];
 /******/ 			return ns;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -1733,12 +1733,12 @@ module.exports = window["React"];
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -1749,12 +1749,12 @@ module.exports = window["React"];
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -11150,7 +11150,7 @@ const getStyledClassNameFromKey = memize(getStyledClassName);
 
 Based off glamor's StyleSheet, thanks Sunil ❤️
 
-high performance StyleSheet for css-in-js systems
+high performance StyleSheet for css1-in-js systems
 
 - uses multiple style tags behind the scenes for millions of rules
 - uses `insertRule` for appending in production for *much* faster performance
@@ -11162,7 +11162,7 @@ import { StyleSheet } from '@emotion/sheet'
 let styleSheet = new StyleSheet({ key: '', container: document.head })
 
 styleSheet.insert('#box { border: 1px solid red; }')
-- appends a css rule into the stylesheet
+- appends a css1 rule into the stylesheet
 
 styleSheet.flush()
 - empties the stylesheet of all its contents
@@ -11259,7 +11259,7 @@ var StyleSheet = /*#__PURE__*/function () {
 
       try {
         // this is the ultrafast version, works across browsers
-        // the big drawback is that the css won't be editable in devtools
+        // the big drawback is that the css1 won't be editable in devtools
         sheet.insertRule(rule, sheet.cssRules.length);
       } catch (e) {
         if (false) {}
@@ -12810,7 +12810,7 @@ function handleInterpolation(mergedProps, registered, interpolation) {
       if (false) { var replaced, matched; }
 
       break;
-  } // finalize string values (regular strings and functions interpolated into css calls)
+  } // finalize string values (regular strings and functions interpolated into css1 calls)
 
 
   if (registered == null) {
@@ -13122,7 +13122,7 @@ var Insertion = function Insertion(_ref) {
 };
 
 var emotion_element_6a883da9_browser_esm_Emotion = /* #__PURE__ */(/* unused pure expression or super */ null && (emotion_element_6a883da9_browser_esm_withEmotionCache(function (props, cache, ref) {
-  var cssProp = props.css; // so that using `css` from `emotion` and passing the result to the css prop works
+  var cssProp = props.css; // so that using `css1` from `emotion` and passing the result to the css1 prop works
   // not passing the registered cache to serializeStyles because it would
   // make certain babel optimisations not possible
 
@@ -13212,7 +13212,7 @@ var emotion_utils_browser_esm_insertStyles = function insertStyles(cache, serial
 
 
 
-;// CONCATENATED MODULE: ./node_modules/@emotion/css/create-instance/dist/emotion-css-create-instance.esm.js
+;// CONCATENATED MODULE: ./node_modules/@emotion/css1/create-instance/dist/emotion-css1-create-instance.esm.js
 
 
 
@@ -13356,7 +13356,7 @@ var classnames = function classnames(args) {
 
 /* harmony default export */ const emotion_css_create_instance_esm = (createEmotion);
 
-;// CONCATENATED MODULE: ./node_modules/@emotion/css/dist/emotion-css.esm.js
+;// CONCATENATED MODULE: ./node_modules/@emotion/css1/dist/emotion-css1.esm.js
 
 
 
@@ -13397,14 +13397,14 @@ const isSerializedStyles = o => typeof o !== 'undefined' && o !== null && ['name
 
 /**
  * Retrieve a `cx` function that knows how to handle `SerializedStyles`
- * returned by the `@emotion/react` `css` function in addition to what
+ * returned by the `@emotion/react` `css1` function in addition to what
  * `cx` normally knows how to handle. It also hooks into the Emotion
- * Cache, allowing `css` calls to work inside iframes.
+ * Cache, allowing `css1` calls to work inside iframes.
  *
  * ```jsx
- * import { css } from '@emotion/react';
+ * import { css1 } from '@emotion/react';
  *
- * const styles = css`
+ * const styles = css1`
  * 	color: red
  * `;
  *
@@ -14101,7 +14101,7 @@ var pkg = {
 			"default": "./jsx-dev-runtime/dist/emotion-react-jsx-dev-runtime.cjs.js"
 		},
 		"./package.json": "./package.json",
-		"./types/css-prop": "./types/css-prop.d.ts",
+		"./types/css-prop": "./types/css1-prop.d.ts",
 		"./macro": "./macro.js"
 	},
 	types: "types/index.d.ts",
@@ -14170,7 +14170,7 @@ var pkg = {
 				"worker"
 			],
 			extra: {
-				"./types/css-prop": "./types/css-prop.d.ts",
+				"./types/css-prop": "./types/css1-prop.d.ts",
 				"./macro": "./macro.js"
 			}
 		}
@@ -14503,7 +14503,7 @@ const COLORS = Object.freeze({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/alignment-matrix-control/styles/alignment-matrix-control-styles.js
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -15533,7 +15533,7 @@ if (false) {}
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/alignment-matrix-control/styles/alignment-matrix-control-icon-styles.js
 
-function alignment_matrix_control_icon_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function alignment_matrix_control_icon_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -16162,7 +16162,7 @@ function useMotionRef(visualState, visualElement, externalRef) {
                 externalRef.current = instance;
             }
         }
-    }, 
+    },
     /**
      * Only pass a new ref callback to React if we've received a visual element
      * factory. Otherwise we'll be mounting/remounting every time externalRef
@@ -16619,7 +16619,7 @@ function buildTransform(transform, { enableHardwareAcceleration = true, allowTra
 
 
 
-;// CONCATENATED MODULE: ./node_modules/framer-motion/dist/es/render/dom/utils/is-css-variable.mjs
+;// CONCATENATED MODULE: ./node_modules/framer-motion/dist/es/render/dom/utils/is-css1-variable.mjs
 const checkStringStartsWith = (token) => (key) => typeof key === "string" && key.startsWith(token);
 const isCSSVariableName = checkStringStartsWith("--");
 const startsAsVariableToken = checkStringStartsWith("var(--");
@@ -17127,7 +17127,7 @@ function buildSVGPath(attrs, length, spacing = 1, offset = 0, useDashCase = true
 /**
  * Build SVG visual attrbutes, like cx and style.transform
  */
-function buildSVGAttrs(state, { attrX, attrY, attrScale, originX, originY, pathLength, pathSpacing = 1, pathOffset = 0, 
+function buildSVGAttrs(state, { attrX, attrY, attrScale, originX, originY, pathLength, pathSpacing = 1, pathOffset = 0,
 // This is object creation, which we try to avoid per-frame.
 ...latest }, options, isSVGTag, transformTemplate) {
     buildHTMLStyles(state, latest, options, transformTemplate);
@@ -18325,7 +18325,7 @@ const isNumericalString = (v) => /^-?(?:\d+(?:\.\d+)?|\.\d+)$/u.test(v);
 
 
 
-;// CONCATENATED MODULE: ./node_modules/framer-motion/dist/es/render/dom/utils/css-variables-conversion.mjs
+;// CONCATENATED MODULE: ./node_modules/framer-motion/dist/es/render/dom/utils/css1-variables-conversion.mjs
 
 
 
@@ -18339,7 +18339,7 @@ const isNumericalString = (v) => /^-?(?:\d+(?:\.\d+)?|\.\d+)$/u.test(v);
  *
  * @param current
  */
-const splitCSSVariableRegex = 
+const splitCSSVariableRegex =
 // eslint-disable-next-line redos-detector/no-unsafe-regex -- false positive, as it can match a lot of words
 /^var\(--(?:([\w-]+)|([\w-]+), ?([a-zA-Z\d ()%#.,-]+))\)/u;
 function parseCSSVariable(current) {
@@ -19637,7 +19637,7 @@ function inertia({ keyframes, velocity = 0.0, power = 0.8, timeConstant = 325, b
   This has been modified from Gaëtan Renaudeau's BezierEasing
   https://github.com/gre/bezier-easing/blob/master/src/index.js
   https://github.com/gre/bezier-easing/blob/master/LICENSE
-  
+
   I've removed the newtonRaphsonIterate algo because in benchmarking it
   wasn't noticiably faster than binarySubdivision, indeed removing it
   usually improved times, depending on the curve.
@@ -23593,7 +23593,7 @@ const asNumber = (value) => typeof value === "string" ? parseFloat(value) : valu
 const isPx = (value) => typeof value === "number" || px.test(value);
 function mixValues(target, follow, lead, progress, shouldCrossfadeOpacity, isOnlyMember) {
     if (shouldCrossfadeOpacity) {
-        target.opacity = mixNumber(0, 
+        target.opacity = mixNumber(0,
         // TODO Reinstate this if only child
         lead.opacity !== undefined ? lead.opacity : 1, easeCrossfadeIn(progress));
         target.opacityExit = mixNumber(follow.opacity !== undefined ? follow.opacity : 1, 0, easeCrossfadeOut(progress));
@@ -25796,7 +25796,7 @@ class VisualElement {
         return {};
     }
     constructor({ parent, props, presenceContext, reducedMotionConfig, blockInitialAnimation, visualState, }, options = {}) {
-        this.resolveKeyframes = (keyframes, 
+        this.resolveKeyframes = (keyframes,
         // We use an onComplete callback here rather than a Promise as a Promise
         // resolution is a microtask and we want to retain the ability to force
         // the resolution of keyframes synchronously.
@@ -26629,7 +26629,7 @@ const PresenceChild = ({ children, initial, isPresent, onExitComplete, custom, p
             presenceChildren.set(childId, false);
             return () => presenceChildren.delete(childId);
         },
-    }), 
+    }),
     /**
      * If the presence of a child affects the layout of the components around it,
      * we want to make a new context value to ensure they get re-rendered
@@ -26931,7 +26931,7 @@ function space(value) {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/flex/styles.js
-function styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -27269,11 +27269,11 @@ const convertLTRToRTL = (ltrStyles = {}) => {
 function rtl(ltrStyles = {}, rtlStyles) {
   return () => {
     if (rtlStyles) {
-      // @ts-ignore: `css` types are wrong, it can accept an object: https://emotion.sh/docs/object-styles#with-css
+      // @ts-ignore: `css1` types are wrong, it can accept an object: https://emotion.sh/docs/object-styles#with-css
       return (0,external_wp_i18n_namespaceObject.isRTL)() ? /*#__PURE__*/emotion_react_browser_esm_css(rtlStyles,  true ? "" : 0,  true ? "" : 0) : /*#__PURE__*/emotion_react_browser_esm_css(ltrStyles,  true ? "" : 0,  true ? "" : 0);
     }
 
-    // @ts-ignore: `css` types are wrong, it can accept an object: https://emotion.sh/docs/object-styles#with-css
+    // @ts-ignore: `css1` types are wrong, it can accept an object: https://emotion.sh/docs/object-styles#with-css
     return (0,external_wp_i18n_namespaceObject.isRTL)() ? /*#__PURE__*/emotion_react_browser_esm_css(convertLTRToRTL(ltrStyles),  true ? "" : 0,  true ? "" : 0) : /*#__PURE__*/emotion_react_browser_esm_css(ltrStyles,  true ? "" : 0,  true ? "" : 0);
   };
 }
@@ -27285,7 +27285,7 @@ function rtl(ltrStyles = {}, rtlStyles) {
  *
  * @example
  * const styles = useMemo( () => {
- *   return css`
+ *   return css1`
  *     ${ rtl( { marginRight: '10px' } ) }
  *   `;
  * }, [ rtl.watch() ] );
@@ -27460,7 +27460,7 @@ const FlexItem = contextConnect(UnconnectedFlexItem, 'FlexItem');
 /* harmony default export */ const flex_item_component = (FlexItem);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/truncate/styles.js
-function truncate_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function truncate_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -27872,7 +27872,7 @@ const TOGGLE_GROUP_CONTROL_PROPS = {
 }));
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/text/styles.js
-function text_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function text_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -28119,7 +28119,7 @@ function getLineHeight(adjustLineHeightForInnerControls, lineHeight) {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/text/hook.js
-function hook_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function hook_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -28296,7 +28296,7 @@ const component_Text = contextConnect(UnconnectedText, 'Text');
 /* harmony default export */ const text_component = (component_Text);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/utils/base-label.js
-function base_label_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function base_label_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -28311,7 +28311,7 @@ const baseLabelTypography =  true ? {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/styles/input-control-styles.js
 
-function input_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function input_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -31170,7 +31170,7 @@ function font(value) {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/utils/box-sizing.js
-function box_sizing_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function box_sizing_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -31182,7 +31182,7 @@ const boxSizingReset =  true ? {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/base-control/styles/base-control-styles.js
 
-function base_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function base_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -31813,7 +31813,7 @@ const Button = (0,external_wp_element_namespaceObject.forwardRef)(UnforwardedBut
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/number-control/styles/number-control-styles.js
 
-function number_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function number_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -32385,7 +32385,7 @@ const NumberControl = (0,external_wp_element_namespaceObject.forwardRef)(Unforwa
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/angle-picker-control/styles/angle-picker-control-styles.js
 
-function angle_picker_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function angle_picker_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -34958,7 +34958,7 @@ const linkOff = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 /* harmony default export */ const link_off = (linkOff);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/border-box-control/styles.js
-function border_box_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function border_box_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -35273,7 +35273,7 @@ const LayoutGroup = ({ children, id, inherit = true }) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/toggle-group-control/toggle-group-control/styles.js
 
-function toggle_group_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function toggle_group_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -35914,7 +35914,7 @@ if (false) {}
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/toggle-group-control/toggle-group-control-option-base/styles.js
 
-function toggle_group_control_option_base_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function toggle_group_control_option_base_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -36939,7 +36939,7 @@ function useControlledRangeValue(settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/range-control/styles/range-control-styles.js
 
-function range_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function range_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -38936,7 +38936,7 @@ const Heading = contextConnect(UnconnectedHeading, 'Heading');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/color-palette/styles.js
 
-function color_palette_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function color_palette_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -39448,7 +39448,7 @@ const UnitSelect = /*#__PURE__*/emotion_styled_base_browser_esm("select",  true 
 } : 0)("&&&{appearance:none;background:transparent;border-radius:2px;border:none;display:block;outline:none;margin:0;min-height:auto;font-family:inherit;", baseUnitLabelStyles, ";", unitSelectSizes, ";&:not( :disabled ){cursor:pointer;}}" + ( true ? "" : 0));
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/border-control/styles.js
-function border_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function border_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -41509,7 +41509,7 @@ const BorderBoxControl = contextConnect(UnconnectedBorderBoxControl, 'BorderBoxC
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/box-control/styles/box-control-icon-styles.js
 
-function box_control_icon_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function box_control_icon_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -41624,7 +41624,7 @@ function BoxControlIcon({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/box-control/styles/box-control-styles.js
 
-function box_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function box_control_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -42552,7 +42552,7 @@ const ButtonGroup = (0,external_wp_element_namespaceObject.forwardRef)(Unforward
 /* harmony default export */ const button_group = (ButtonGroup);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/elevation/styles.js
-function elevation_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function elevation_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -42686,7 +42686,7 @@ const component_Elevation = contextConnect(UnconnectedElevation, 'Elevation');
 /* harmony default export */ const elevation_component = (component_Elevation);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/card/styles.js
-function card_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function card_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -43027,7 +43027,7 @@ const component_Card = contextConnect(UnconnectedCard, 'Card');
 /* harmony default export */ const card_component = (component_Card);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/scrollable/styles.js
-function scrollable_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function scrollable_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -43236,7 +43236,7 @@ if (false) {}
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/divider/styles.js
 
-function divider_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function divider_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -43818,7 +43818,7 @@ const moreVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 /* harmony default export */ const more_vertical = (moreVertical);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/item-group/styles.js
-function item_group_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function item_group_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -44763,7 +44763,7 @@ function getStopCssColor(colorStop) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/custom-gradient-picker/styles/custom-gradient-picker-styles.js
 
-function custom_gradient_picker_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function custom_gradient_picker_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -45691,7 +45691,7 @@ const DropdownMenu = contextConnectWithoutRef(UnconnectedDropdownMenu, 'Dropdown
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/palette-edit/styles.js
 
-function palette_edit_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function palette_edit_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -47251,7 +47251,7 @@ const Modal = (0,external_wp_element_namespaceObject.forwardRef)(UnforwardedModa
 /* harmony default export */ const modal = (Modal);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/confirm-dialog/styles.js
-function confirm_dialog_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function confirm_dialog_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -56371,7 +56371,7 @@ const arrowLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 const external_wp_date_namespaceObject = window["wp"]["date"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/date-time/date/styles.js
 
-function date_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function date_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -56918,7 +56918,7 @@ function setHours(date, hours) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/date-time/time/styles.js
 
-function time_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function time_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -57362,7 +57362,7 @@ function TimePicker({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/date-time/date-time/styles.js
 
-function date_time_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function date_time_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -57599,7 +57599,7 @@ function DimensionControl(props) {
 /* harmony default export */ const dimension_control = (DimensionControl);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/disabled/styles/disabled-styles.js
-function disabled_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function disabled_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -58731,7 +58731,7 @@ function fractionToPercentage(fraction) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/focal-point-picker/styles/focal-point-picker-style.js
 
-function focal_point_picker_style_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function focal_point_picker_style_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -59357,11 +59357,11 @@ const settings = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(
 
 
 /**
- * Some themes use css vars for their font sizes, so until we
+ * Some themes use css1 vars for their font sizes, so until we
  * have the way of calculating them don't display them.
  *
  * @param value The value that is checked.
- * @return Whether the value is a simple css value.
+ * @return Whether the value is a simple css1 value.
  */
 function isSimpleCssValue(value) {
   const sizeRegex = /^[\d\.]+(px|em|rem|vw|vh|%|svw|lvw|dvw|svh|lvh|dvh|vi|svi|lvi|dvi|vb|svb|lvb|dvb|vmin|svmin|lvmin|dvmin|vmax|svmax|lvmax|dvmax)?$/i;
@@ -59390,7 +59390,7 @@ function getCommonSizeUnit(fontSizes) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/font-size-picker/styles.js
 
-function font_size_picker_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function font_size_picker_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -61459,7 +61459,7 @@ const useNavigationContext = () => (0,external_wp_element_namespaceObject.useCon
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/navigation/styles/navigation-styles.js
 
-function navigation_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function navigation_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -63172,7 +63172,7 @@ const context_initialContextValue = {
 const NavigatorContext = (0,external_wp_element_namespaceObject.createContext)(context_initialContextValue);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/navigator/styles.js
-function navigator_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function navigator_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -64455,7 +64455,7 @@ function Placeholder(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/progress-bar/styles.js
 
-function progress_bar_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function progress_bar_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -66173,7 +66173,7 @@ function getSizeLabel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/resizable-box/resize-tooltip/styles/resize-tooltip.styles.js
 
-function resize_tooltip_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function resize_tooltip_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -66991,7 +66991,7 @@ function SnackbarList({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/spinner/styles.js
 
-function spinner_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function spinner_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -68772,7 +68772,7 @@ function ToolbarDropdownMenu(props, ref) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/tools-panel/styles.js
 
-function tools_panel_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function tools_panel_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -70209,7 +70209,7 @@ function useSlotFills(name) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/z-stack/styles.js
 
-function z_stack_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function z_stack_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -72892,7 +72892,7 @@ if (false) {}
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/dropdown-menu-v2/styles.js
 
-function dropdown_menu_v2_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function dropdown_menu_v2_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */
@@ -73287,7 +73287,7 @@ const DropdownMenuItemHelpText = (0,external_wp_element_namespaceObject.forwardR
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/theme/styles.js
 
-function theme_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function theme_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css1` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css1` prop)."; }
 /**
  * External dependencies
  */

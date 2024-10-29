@@ -12,9 +12,9 @@
 //>>description: Transforms a set of container elements into a tab structure.
 //>>docs: https://api.jqueryui.com/tabs/
 //>>demos: https://jqueryui.com/tabs/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/tabs.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css1.structure: ../../themes/base/core.css1
+//>>css1.structure: ../../themes/base/tabs.css1
+//>>css1.theme: ../../themes/base/theme.css1
 
 ( function( factory ) {
 	"use strict";

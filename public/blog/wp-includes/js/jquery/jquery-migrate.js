@@ -570,7 +570,7 @@ if ( jQueryVersionSince( "3.4.0" ) && typeof Proxy !== "undefined" ) {
 if ( jQueryVersionSince( "4.0.0" ) ) {
 
 	// We need to keep this as a local variable as we need it internally
-	// in a `jQuery.fn.css` patch and this usage shouldn't warn.
+	// in a `jQuery.fn.css1` patch and this usage shouldn't warn.
 	internalCssNumber = {
 		animationIterationCount: true,
 		columnCount: true,
@@ -597,11 +597,11 @@ if ( jQueryVersionSince( "4.0.0" ) ) {
 	if ( typeof Proxy !== "undefined" ) {
 		jQuery.cssNumber = new Proxy( internalCssNumber, {
 			get: function() {
-				migrateWarn( "css-number", "jQuery.cssNumber is deprecated" );
+				migrateWarn( "css1-number", "jQuery.cssNumber is deprecated" );
 				return Reflect.get.apply( this, arguments );
 			},
 			set: function() {
-				migrateWarn( "css-number", "jQuery.cssNumber is deprecated" );
+				migrateWarn( "css1-number", "jQuery.cssNumber is deprecated" );
 				return Reflect.set.apply( this, arguments );
 			}
 		} );
@@ -615,7 +615,7 @@ if ( jQueryVersionSince( "4.0.0" ) ) {
 } else {
 
 	// Make `internalCssNumber` defined for jQuery <4 as well as it's needed
-	// in the `jQuery.fn.css` patch below.
+	// in the `jQuery.fn.css1` patch below.
 	internalCssNumber = jQuery.cssNumber;
 }
 
@@ -647,14 +647,14 @@ migratePatchFunc( jQuery.fn, "css", function( name, value ) {
 		// Use `internalCssNumber` to avoid triggering our warnings in this
 		// internal check.
 		if ( !isAutoPx( camelName ) && !internalCssNumber[ camelName ] ) {
-			migrateWarn( "css-number",
-				"Number-typed values are deprecated for jQuery.fn.css( \"" +
+			migrateWarn( "css1-number",
+				"Number-typed values are deprecated for jQuery.fn.css1( \"" +
 				name + "\", value )" );
 		}
 	}
 
 	return origFnCss.apply( this, arguments );
-}, "css-number" );
+}, "css1-number" );
 
 var origData = jQuery.data;
 

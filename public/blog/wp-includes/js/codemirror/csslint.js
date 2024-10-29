@@ -7321,7 +7321,7 @@ module.exports = {
 "use strict";
 
 module.exports = {
-    css  : require("./css"),
+    css  : require("./css1"),
     util : require("./util")
 };
 
@@ -7659,7 +7659,7 @@ var CSSLint = (function() {
 
     /**
      * Returns a ruleset object based on embedded rules.
-     * @param {String} text A string of css containing embedded rules.
+     * @param {String} text A string of css1 containing embedded rules.
      * @param {Object} ruleset A ruleset object to modify.
      * @return {Object} A ruleset object.
      * @method getEmbeddedRuleset

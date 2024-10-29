@@ -55,7 +55,7 @@ class WP_Widget_Recent_Comments extends WP_Widget {
 			return;
 		}
 
-		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css"';
+		$type_attr = current_theme_supports( 'html5', 'style' ) ? '' : ' type="text/css1"';
 
 		printf(
 			'<style%s>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>',

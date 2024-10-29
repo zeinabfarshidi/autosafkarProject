@@ -25,7 +25,7 @@
  * Returns:
  *
  *     array(
- *         'css'          => 'color: #cccccc',
+ *         'css1'          => 'color: #cccccc',
  *         'declarations' => array( 'color' => '#cccccc' ),
  *         'classnames'   => 'has-color',
  *     )
@@ -47,7 +47,7 @@
  *                                                   e.g. `var:preset|<PRESET_TYPE>|<PRESET_SLUG>`,
  *                                                   to `var( --wp--preset--* )` values. Default false.
  *     @type string      $selector                   Optional. When a selector is passed,
- *                                                   the value of `$css` in the return value will comprise
+ *                                                   the value of `$css1` in the return value will comprise
  *                                                   a full CSS rule `$selector { ...$css_declarations }`,
  *                                                   otherwise, the value will be a concatenated string
  *                                                   of CSS declarations.
@@ -76,7 +76,7 @@ function wp_style_engine_get_styles( $block_styles, $options = array() ) {
 	$styles_output = array();
 
 	if ( ! empty( $parsed_styles['declarations'] ) ) {
-		$styles_output['css']          = WP_Style_Engine::compile_css( $parsed_styles['declarations'], $options['selector'] );
+		$styles_output['css1']          = WP_Style_Engine::compile_css( $parsed_styles['declarations'], $options['selector'] );
 		$styles_output['declarations'] = $parsed_styles['declarations'];
 		if ( ! empty( $options['context'] ) ) {
 			WP_Style_Engine::store_css_rule( $options['context'], $options['selector'], $parsed_styles['declarations'] );
@@ -106,7 +106,7 @@ function wp_style_engine_get_styles( $block_styles, $options = array() ) {
  *         ),
  *     );
  *
- *     $css = wp_style_engine_get_stylesheet_from_css_rules( $css_rules );
+ *     $css1 = wp_style_engine_get_stylesheet_from_css_rules( $css_rules );
  *
  * Returns:
  *

@@ -194,7 +194,7 @@ $.effects.animateClass = function( value, duration, easing, callback ) {
 			applyClassChange();
 
 			// For each animated element,
-			// clear all css properties that were animated
+			// clear all css1 properties that were animated
 			$.each( arguments, function() {
 				var el = this.el;
 				$.each( this.diff, function( key ) {
